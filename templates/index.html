@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#EC4899',
+                        secondary: '#F43F5E',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(45deg, #EC4899, #F43F5E);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-dark">Arcenal<span class="gradient-text">.Dev</span></h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary px-3 py-2 font-medium transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-dark hover:text-primary px-3 py-2 font-medium transition-colors duration-200">About</a>
+                    <a href="#skills" class="text-dark hover:text-primary px-3 py-2 font-medium transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="text-dark hover:text-primary px-3 py-2 font-medium transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md font-medium hover:bg-secondary transition-colors duration-200">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4">
+            <a href="#home" class="block px-3 py-2 text-dark hover:text-primary">Home</a>
+            <a href="#about" class="block px-3 py-2 text-dark hover:text-primary">About</a>
+            <a href="#skills" class="block px-3 py-2 text-dark hover:text-primary">Skills</a>
+            <a href="#projects" class="block px-3 py-2 text-dark hover:text-primary">Projects</a>
+            <a href="#contact" class="block px-3 py-2 text-dark hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-primary to-secondary text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Crafting Digital Experiences That <span class="gradient-text">Inspire</span></h2>
+                    <p class="text-xl mb-8 opacity-90">Hi, I'm Therese Andrei C. Arcenal, a passionate UI/UX Designer focused on creating intuitive and beautiful digital experiences.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg">View My Work</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition-colors duration-200">Hire Me</a>
+                    </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200"><i class="fab fa-dribbble text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200"><i class="fab fa-behance text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="flex justify-center animate-float">
+                    <div class="relative">
+                        <img src="static/Arcenal1.jpg" alt="Profile" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-dark">Who I Am</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a UI/UX designer with 5+ years of experience creating digital products that are both beautiful and functional. 
+                        My approach combines user-centered design principles with aesthetic sensibility to deliver solutions that users love.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I specialize in creating intuitive interfaces, conducting user research, and designing seamless user flows. 
+                        My goal is to bridge the gap between business objectives and user needs through thoughtful design.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="bg-light p-4 rounded-lg text-center">
+                            <div class="text-primary text-3xl mb-2">50+</div>
+                            <div class="text-dark font-medium">Projects</div>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg text-center">
+                            <div class="text-primary text-3xl mb-2">30+</div>
+                            <div class="text-dark font-medium">Clients</div>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg text-center">
+                            <div class="text-primary text-3xl mb-2">5+</div>
+                            <div class="text-dark font-medium">Years Exp.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-dark">My Design Process</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Research</h4>
+                                <p class="text-gray-600">Understanding user needs and business goals through interviews and data analysis.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Wireframing</h4>
+                                <p class="text-gray-600">Creating low-fidelity prototypes to test information architecture and user flows.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">UI Design</h4>
+                                <p class="text-gray-600">Developing high-fidelity designs with attention to visual hierarchy and aesthetics.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Testing</h4>
+                                <p class="text-gray-600">Validating designs through user testing and iterating based on feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Skills</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark">UI Design</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Visual Design
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Typography
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Color Theory
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Design Systems
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark">UX Research</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            User Interviews
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Persona Development
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Usability Testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Information Architecture
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark">Tools & Tech</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Figma & Adobe XD
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            HTML/CSS/JS
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Tailwind CSS
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Python/Flask
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Here are some of my recent design projects that showcase my skills and approach.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-white text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-dark">Mobile Banking App</h3>
+                        <p class="text-gray-600 mb-4">Redesigned the user experience for a leading banking app, increasing user retention by 35%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UX Research</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-white text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-dark">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Designed a seamless shopping experience that reduced cart abandonment by 28%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">User Flows</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">A/B Testing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-dark">Analytics Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Created a data visualization dashboard that improved decision-making for business users.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Data Viz</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-colors duration-200">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="text-white">Testimonials</span></h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Abino Lee</h4>
+                            <p class="text-white text-opacity-80">CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Therese completely transformed our mobile app experience. Her attention to detail and user-centered approach resulted in a 40% increase in user engagement."</p>
+                    <div class="flex mt-4 text-yellow-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-white text-opacity-80">Product Manager, RetailX</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Working with Therese was a game-changer for our e-commerce platform. Her designs not only looked beautiful but significantly improved our conversion rates."</p>
+                    <div class="flex mt-4 text-yellow-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-dark">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Email</h4>
+                                <p class="text-gray-600">hello@arcenal.dev</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Phone</h4>
+                                <p class="text-gray-600">+69 968-286-8526</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Location</h4>
+                                <p class="text-gray-600">45 Sergio Osmena Blvd, Cebu City</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-dark mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-light text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-light text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="bg-light text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                            <a href="#" class="bg-light text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200" placeholder="Subject">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors duration-200 shadow-lg">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Arcenal<span class="gradient-text">.Dev</span></h3>
+                    <p class="text-gray-400">Creating digital experiences that inspire and engage users through thoughtful design.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Web Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Mobile App Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">User Research</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on my latest projects and design insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-dark w-full">
+                        <button class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-secondary transition-colors duration-200">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Therese Andrei C. Arcenal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-secondary transition-colors duration-200 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
