@@ -41,9 +41,11 @@ if (darkModeToggleMobile) {
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 
 // Back to top button
 const backToTopButton = document.getElementById('back-to-top');
@@ -75,7 +77,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             
             // Close mobile menu if open
-            if (!mobileMenu.classList.contains('hidden')) {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
         }
@@ -84,12 +86,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar background change on scroll
 window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-        document.getElementById('navbar').classList.add('bg-white', 'shadow-md');
-        document.getElementById('navbar').classList.add('dark:bg-darkBg');
-    } else {
-        document.getElementById('navbar').classList.remove('bg-white', 'shadow-md');
-        document.getElementById('navbar').classList.remove('dark:bg-darkBg');
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
     }
 });
 
@@ -122,16 +125,14 @@ function initAnimations() {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-    
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const parallaxElement = document.getElementById('home');
-        const rate = scrolled * -0.5;
-        
-        parallaxElement.style.backgroundPosition = `center ${rate}px`;
-    });
 }
 
-// Initialize animations on DOM content loaded
-document.addEventListener('DOMContentLoaded', initAnimations);
+// Initialize everything on DOM content loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Make page visible immediately
+    document.body.style.opacity = '1';
+    document.body.style.overflow = 'visible';
+    
+    initAnimations();
+    initParallax();
+});
