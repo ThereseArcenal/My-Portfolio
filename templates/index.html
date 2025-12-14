@@ -195,29 +195,38 @@
 <body class="bg-gray-100 font-sans antialiased dark-mode-transition">
     <!-- Navigation -->
     <nav id="navbar" class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 dark:bg-darkBg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-2xl font-bold text-dark dark:text-white">Arcenal<span class="gradient-text">.Dev</span></h1>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Left side: Logo -->
+            <div class="flex items-center">
+                <div class="text-left">
+                    <div class="flex items-end">
+                        <h1 class="text-3xl font-bold text-dark dark:text-white leading-none">AI</h1>
+                        <span class="gradient-text text-2xl font-bold leading-none ml-1">-ARCENAL</span>
                     </div>
+                    <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide">IT-ELAI FINALS</div>
                 </div>
-                <div class="hidden md:flex items-center space-x-4">
+            </div>
+
+            <!-- Right side: Navigation links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <div class="flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary">Home</a>
                     <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary">About</a>
                     <a href="#skills" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary">Skills</a>
                     <a href="#projects" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary">Projects</a>
-                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md font-medium hover:bg-secondary transition-colors duration-200">Contact</a>
-
-                    <!-- Dark Mode Toggle -->
-                    <div class="flex items-center ml-4">
-                        <label class="dark-mode-switch">
-                            <input type="checkbox" id="dark-mode-toggle">
-                            <span class="dark-mode-slider"></span>
-                        </label>
-                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-200">Dark</span>
-                    </div>
+                    <a href="#contact" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary">Contact</a>
                 </div>
+                
+                <!-- Dark Mode Toggle -->
+                <div class="flex items-center ml-8">
+                    <label class="dark-mode-switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="dark-mode-slider"></span>
+                    </label>
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-200">Dark</span>
+                </div>
+            </div>
 
                 <div class="md:hidden flex items-center space-x-4">
                     <!-- Dark Mode Toggle for Mobile -->
@@ -244,106 +253,103 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-primary to-secondary text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Crafting Digital Experiences That <span class="gradient-text">Inspire</span></h2>
-                    <p class="text-xl mb-8 opacity-90 animate-fade-in" style="animation-delay: 0.2s;">Hi, I'm Therese Andrei C. Arcenal, a passionate UI/UX Designer focused on creating intuitive and beautiful digital experiences.</p>
-                    <div class="flex space-x-4 animate-fade-in" style="animation-delay: 0.4s;">
-                        <a href="#projects" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg hover-lift">View My Work</a>
-                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition-colors duration-200 hover-lift">Hire Me</a>
-                    </div>
-                    <div class="mt-8 flex space-x-4 animate-fade-in" style="animation-delay: 0.6s;">
-                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-linkedin-in text-xl"></i></a>
-                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-dribbble text-xl"></i></a>
-                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-behance text-xl"></i></a>
-                        <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-github text-xl"></i></a>
+<!-- Hero Section -->
+<section id="home" class="bg-gradient-to-r from-primary to-secondary text-white py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Crafting Digital Experiences That <span class="gradient-text">Inspire</span></h2>
+                <p class="text-xl mb-8 opacity-90 animate-fade-in" style="animation-delay: 0.2s;">Welcome to my creative space! I'm a passionate UI/UX Designer dedicated to transforming ideas into intuitive and beautiful digital experiences that users love.</p>
+                <div class="flex space-x-4 animate-fade-in" style="animation-delay: 0.4s;">
+                    <a href="#projects" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg hover-lift">View My Work</a>
+                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition-colors duration-200 hover-lift">Hire Me</a>
+                </div>
+                <div class="mt-8 flex space-x-4 animate-fade-in" style="animation-delay: 0.6s;">
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-dribbble text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-behance text-xl"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200 transition-colors duration-200 transform hover:scale-110"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative animate-float">
+                    <img src="static/Arcenal1.jpg" alt="Profile" class="rounded-full w-64 h-64 object-cover shadow-lg border-4 border-white">
+                    <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg dark:bg-darkCard">
+                        <i class="fas fa-palette text-3xl text-primary"></i>
                     </div>
                 </div>
-                <div class="flex justify-center">
-                    <div class="relative animate-float">
-                          <img src="static/Arcenal1.jpg" alt="Profile" class="rounded-full w-64 h-64 object-cover shadow-lg border-4 border-white">
-                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg dark:bg-darkCard">
-                            <i class="fas fa-palette text-3xl text-primary"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- About Section -->
+<section id="about" class="py-20 bg-white dark:bg-darkBg section-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-darkText"><span class="gradient-text">ABOUT</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-dark dark:text-darkText">Hello! I'm <span class="gradient-text">Therese Andrei C. Arcenal</span>.</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
+                    With a passion for cutting-edge technology and a commitment to excellence, I specialize in crafting bespoke IT solutions that drive success and efficiency for my clients globally.
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
+                    With over <span class="font-bold text-primary">5+ years of specialist experience</span>, I bring deep expertise in UI/UX design, full-stack development, and strategic consulting. My goal is to transform complex challenges into scalable, reliable, and innovative digital experiences.
+                </p>
+                <div class="flex space-x-4">
+                    <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
+                        <div class="text-primary text-3xl mb-2">20+</div>
+                        <div class="text-dark font-medium dark:text-darkText">Projects</div>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
+                        <div class="text-primary text-3xl mb-2">30+</div>
+                        <div class="text-dark font-medium dark:text-darkText">Clients</div>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
+                        <div class="text-primary text-3xl mb-2">5+</div>
+                        <div class="text-dark font-medium dark:text-darkText">Years Exp.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light p-8 rounded-xl hover-lift dark:bg-darkCard">
+                <h3 class="text-2xl font-bold mb-6 text-dark dark:text-darkText">My Design Process</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-dark mb-1 dark:text-darkText">Research</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Understanding user needs and business goals through interviews and data analysis.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-dark mb-1 dark:text-darkText">Wireframing</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Creating low-fidelity prototypes to test information architecture and user flows.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-dark mb-1 dark:text-darkText">UI Design</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Developing high-fidelity designs with attention to visual hierarchy and aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
+                        <div>
+                            <h4 class="font-bold text-dark mb-1 dark:text-darkText">Testing</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Validating designs through user testing and iterating based on feedback.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-darkBg section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-darkText">About <span class="gradient-text">Me</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-dark dark:text-darkText">Who I Am</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
-                        I'm a UI/UX designer with 5+ years of experience creating digital products that are both beautiful and functional. 
-                        My approach combines user-centered design principles with aesthetic sensibility to deliver solutions that users love.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
-                        I specialize in creating intuitive interfaces, conducting user research, and designing seamless user flows. 
-                        My goal is to bridge the gap between business objectives and user needs through thoughtful design.
-                    </p>
-                    <div class="flex space-x-4">
-                        <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
-                            <div class="text-primary text-3xl mb-2">20+</div>
-                            <div class="text-dark font-medium dark:text-darkText">Projects</div>
-                        </div>
-                        <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
-                            <div class="text-primary text-3xl mb-2">30+</div>
-                            <div class="text-dark font-medium dark:text-darkText">Clients</div>
-                        </div>
-                        <div class="bg-light p-4 rounded-lg text-center hover-lift dark:bg-darkCard">
-                            <div class="text-primary text-3xl mb-2">5+</div>
-                            <div class="text-dark font-medium dark:text-darkText">Years Exp.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-light p-8 rounded-xl hover-lift dark:bg-darkCard">
-                    <h3 class="text-2xl font-bold mb-6 text-dark dark:text-darkText">My Design Process</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
-                            <div>
-                                <h4 class="font-bold text-dark mb-1 dark:text-darkText">Research</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Understanding user needs and business goals through interviews and data analysis.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
-                            <div>
-                                <h4 class="font-bold text-dark mb-1 dark:text-darkText">Wireframing</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Creating low-fidelity prototypes to test information architecture and user flows.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
-                            <div>
-                                <h4 class="font-bold text-dark mb-1 dark:text-darkText">UI Design</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Developing high-fidelity designs with attention to visual hierarchy and aesthetics.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
-                            <div>
-                                <h4 class="font-bold text-dark mb-1 dark:text-darkText">Testing</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Validating designs through user testing and iterating based on feedback.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+</section>
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-light dark:bg-darkBg section-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -429,144 +435,84 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white dark:bg-darkBg section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-darkText">Featured <span class="gradient-text">Projects</span></h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4 dark:text-gray-400">Here are some of my recent design projects that showcase my skills and approach.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
-                    <div class="h-48 overflow-hidden relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                            alt="Mobile Banking App" 
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <a href="#" class="text-white text-sm font-medium hover:text-primary transition-colors">
-                                View Case Study <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">Mobile Banking App</h3>
-                        <p class="text-gray-600 mb-4 dark:text-gray-400">Redesigned the user experience for a leading banking app, increasing user retention by 35%.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UX Research</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
-                    <div class="h-48 overflow-hidden relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                            alt="E-commerce Platform" 
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <a href="#" class="text-white text-sm font-medium hover:text-primary transition-colors">
-                                View Case Study <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">E-commerce Platform</h3>
-                        <p class="text-gray-600 mb-4 dark:text-gray-400">Designed a seamless shopping experience that reduced cart abandonment by 28%.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">User Flows</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">A/B Testing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
-                    <div class="h-48 overflow-hidden relative">
-                        <img 
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                            alt="Analytics Dashboard" 
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <a href="#" class="text-white text-sm font-medium hover:text-primary transition-colors">
-                                View Case Study <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">Analytics Dashboard</h3>
-                        <p class="text-gray-600 mb-4 dark:text-gray-400">Created a data visualization dashboard that improved decision-making for business users.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Data Viz</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-colors duration-200 hover-lift dark:border-primary dark:text-primary">
-                    View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white dark:bg-darkBg section-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-darkText">Featured <span class="gradient-text">Projects</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4 dark:text-gray-400">Here are some of my recent design projects that showcase my skills and approach.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="text-white">Testimonials</span></h2>
-                <div class="w-20 h-1 bg-white mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm hover-lift">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Abino Lee</h4>
-                            <p class="text-white text-opacity-80">CEO, TechStart Inc.</p>
-                        </div>
-                    </div>
-                    <p class="italic">"Therese completely transformed our mobile app experience. Her attention to detail and user-centered approach resulted in a 40% increase in user engagement."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="static/images/Clearcause.jpg" 
+                        alt="ClearCause Donation Platform" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                       
+                    >
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">ClearCause Donation Platform</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Redesigned the user experience for a leading banking app, increasing user retention by 35%.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UX Research</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
                     </div>
                 </div>
-                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm hover-lift">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-white text-opacity-80">Product Manager, RetailX</p>
-                        </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/static/images/Subdivision.jpg" 
+                        alt="House Subdivision Platform" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
+                    >
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">House Subdivision Platform</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Designed a seamless shopping experience that reduced cart abandonment by 28%.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">User Flows</span>
                     </div>
-                    <p class="italic">"Working with Therese was a game-changer for our e-commerce platform. Her designs not only looked beautiful but significantly improved our conversion rates."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="static/images/UA.jpg" 
+                        alt="UA" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
+                    >
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">Underground Apparel UI</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Created a data visualization dashboard that improved decision-making for business users.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-colors duration-200 hover-lift dark:border-primary dark:text-primary">
+                View All Projects
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white dark:bg-darkBg section-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -585,7 +531,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-dark mb-1 dark:text-darkText">Email</h4>
-                                <p class="text-gray-600 dark:text-gray-400">hello@arcenal.dev</p>
+                                <p class="text-gray-600 dark:text-gray-400">galearcenal6@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -660,7 +606,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Arsenal<span class="gradient-text">.Dev</span></h3>
+                    <h3 class="text-xl font-bold mb-4">AI<span class="gradient-text">-Arcenal</span></h3>
                     <p class="text-gray-400">Creating digital experiences that inspire and engage users through thoughtful design.</p>
                 </div>
                 <div>
@@ -704,144 +650,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Dark mode functionality
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
-        
-        // Check for saved theme preference or respect OS preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            if (darkModeToggle) darkModeToggle.checked = true;
-            if (darkModeToggleMobile) darkModeToggleMobile.checked = true;
-        } else {
-            document.documentElement.classList.remove('dark');
-            if (darkModeToggle) darkModeToggle.checked = false;
-            if (darkModeToggleMobile) darkModeToggleMobile.checked = false;
-        }
-        
-        // Function to toggle dark mode
-        function toggleDarkMode() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-                if (darkModeToggle) darkModeToggle.checked = false;
-                if (darkModeToggleMobile) darkModeToggleMobile.checked = false;
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-                if (darkModeToggle) darkModeToggle.checked = true;
-                if (darkModeToggleMobile) darkModeToggleMobile.checked = true;
-            }
-        }
-        
-        // Add event listeners to both toggles
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('change', toggleDarkMode);
-        }
-        
-        if (darkModeToggleMobile) {
-            darkModeToggleMobile.addEventListener('change', toggleDarkMode);
-        }
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.getElementById('navbar').classList.add('bg-white', 'shadow-md');
-                document.getElementById('navbar').classList.add('dark:bg-darkBg');
-            } else {
-                document.getElementById('navbar').classList.remove('bg-white', 'shadow-md');
-                document.getElementById('navbar').classList.remove('dark:bg-darkBg');
-            }
-        });
-
-        // Initialize animations
-        function initAnimations() {
-            // Animate skills items with staggered delay
-            const skillItems = document.querySelectorAll('.skill-item');
-            skillItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                    item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                }, index * 200);
-            });
-            
-            // Intersection Observer for section animations
-            const sections = document.querySelectorAll('.section-hidden');
-            
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('section-visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
-            
-            // Parallax effect for hero section
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const parallaxElement = document.getElementById('home');
-                const rate = scrolled * -0.5;
-                
-                parallaxElement.style.backgroundPosition = `center ${rate}px`;
-            });
-        }
-
-        // Initialize animations on DOM content loaded
-        document.addEventListener('DOMContentLoaded', initAnimations);
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
