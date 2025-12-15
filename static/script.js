@@ -134,5 +134,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = 'visible';
     
     initAnimations();
-    initParallax();
+    // initParallax() - commented out, function not defined
 });

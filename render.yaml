@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: Arcenal-portfolio
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLOWISE_API_URL
+        scope: build,runtime
+      - key: FLOWISE_CHATFLOW_ID
+        scope: build,runtime
+      - key: FLOWISE_API_KEY
+        scope: build,runtime
+      - key: PYTHON_VERSION
+        value: 3.11.0
