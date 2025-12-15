@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Arcenal-portfolio
+    name: Arcenal-Portfolio
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
