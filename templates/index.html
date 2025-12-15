@@ -25,9 +25,35 @@
                             right: 20,
                             bottom: 90,
                             size: "medium",
+                        },
+                        chatWindow: {
+                            welcomeMessage: "Hi! I'm Arcenal 🤖",
+                            backgroundColor: "#ffffff",
+                            textColor: "#000000",
+                            fontSize: 16,
+                            headerTitle: "Arcenal AI Assistant",
+                            headerTitleFontSize: 18,
+                            headerBgColor: "#EC4899",
+                            headerTextColor: "#ffffff",
+                            showAvatar: false,
+                            botMessage: {
+                                backgroundColor: "#EC4899",
+                                textColor: "#ffffff",
+                                avatarSrc: ""
+                            }
                         }
                     }
                 });
+                
+                // Remove Flowise branding footer
+                setTimeout(() => {
+                    const allElements = document.querySelectorAll('*');
+                    allElements.forEach(el => {
+                        if (el.textContent && el.textContent.includes('Powered by Flowise')) {
+                            el.style.display = 'none !important';
+                        }
+                    });
+                }, 2000);
             } catch (error) {
                 console.log("Flowise chatbot initialized");
             }
@@ -284,6 +310,15 @@
         /* Parallax effect */
         .parallax-element {
             transition: transform 0.1s linear;
+        }
+        
+        /* Hide Flowise attribution */
+        iframe[src*="flowise"] ~ div,
+        .fcl-button-footer,
+        .fcl-powered,
+        [class*="credit"],
+        [class*="attribution"] {
+            display: none !important;
         }
     </style>
 </head>
