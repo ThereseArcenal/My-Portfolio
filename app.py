@@ -1,23 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
 from dotenv import load_dotenv
 import os
-import sys
+import requests
 
 load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-# Validate required environment variables
-required_env_vars = [
-    'FLOWISE_API_URL',
-    'FLOWISE_CHATFLOW_ID',
-]
-
-missing_vars = [var for var in required_env_vars if not os.getenv(var)]
-
-if missing_vars and os.getenv('FLASK_ENV') == 'production':
-    print(f"ERROR: Missing required environment variables: {', '.join(missing_vars)}")
-    sys.exit(1)
+FLOWISE_API_URL = os.getenv('FLOWISE_API_URL', 'https://cloud.flowiseai.com')
+FLOWISE_CHATFLOW_ID = os.getenv('FLOWISE_CHATFLOW_ID', 'da2a44e2-1388-42f4-b235-b13a3886b25a')
 
 @app.route('/')
 def index():
@@ -27,6 +18,39 @@ def index():
 def health():
     return {'status': 'ok'}, 200
 
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """Proxy endpoint for Flowise chatbot"""
+    try:
+        data = request.json
+        question = data.get('question', '')
+        
+        if not question:
+            return jsonify({'error': 'No question provided'}), 400
+        
+        flowise_url = f"{FLOWISE_API_URL}/api/v1/prediction/{FLOWISE_CHATFLOW_ID}"
+        print(f"Calling: {flowise_url}")  # Debug log
+        
+        response = requests.post(
+            flowise_url,
+            json={
+                'question': question,
+                'history': data.get('history', []),
+                'overrideConfig': data.get('overrideConfig', {})
+            },
+            timeout=30
+        )
+        
+        if response.status_code != 200:
+            print(f"Flowise error: {response.status_code} - {response.text}")
+            return jsonify({'error': 'Chatbot service error', 'details': response.text}), response.status_code
+        
+        return jsonify(response.json()), 200
+        
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return jsonify({'error': 'Server error', 'details': str(e)}), 500
+
 if __name__ == '__main__':
     debug_mode = os.getenv('FLASK_ENV') != 'production'
-    app.run(host='0.0.0.0', debug=debug_mode)
+    app.run(host='0.0.0.0', debug=debug_mode, port=5000)

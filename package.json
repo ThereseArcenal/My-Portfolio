@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "flask": "^0.2.10"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
   }
 }
