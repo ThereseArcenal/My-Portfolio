@@ -8,7 +8,7 @@ load_dotenv()
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 FLOWISE_API_URL = os.getenv('FLOWISE_API_URL', 'https://cloud.flowiseai.com')
-FLOWISE_CHATFLOW_ID = os.getenv('FLOWISE_CHATFLOW_ID', 'da2a44e2-1388-42f4-b235-b13a3886b25a')
+FLOWISE_CHATFLOW_ID = os.getenv('FLOWISE_CHATFLOW_ID', '7fd72080-6174-4513-a6ea-ffdc0f164e1c')
 
 @app.route('/')
 def index():
