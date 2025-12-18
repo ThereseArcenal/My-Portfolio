@@ -7,8 +7,8 @@ load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-FLOWISE_API_URL = os.getenv('FLOWISE_API_URL', 'https://cloud.flowiseai.com')
-FLOWISE_CHATFLOW_ID = os.getenv('FLOWISE_CHATFLOW_ID', '7fd72080-6174-4513-a6ea-ffdc0f164e1c')
+FLOWISE_API_URL = 'https://cloud.flowiseai.com'
+FLOWISE_CHATFLOW_ID = os.getenv('FLOWISE_CHATFLOW_ID')
 
 @app.route('/')
 def index():
@@ -33,7 +33,7 @@ def chat():
         
         response = requests.post(
             flowise_url,
-            json={
+            json={ 
                 'question': question,
                 'history': data.get('history', []),
                 'overrideConfig': data.get('overrideConfig', {})
