@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="wheth=device-width, initial-scale=1.0">
-    <title>AI-Arcenal Portfolio</title>
+    <title>My Portfolio</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -818,10 +818,10 @@
                 <div class="flex items-center">
                     <div class="text-left">
                         <div class="flex items-end">
-                            <h1 class="text-3xl font-bold text-dark dark:text-white leading-none">AI</h1>
-                            <span class="gradient-text text-2xl font-bold leading-none ml-1">-ARCENAL</span>
+                            <h1 class="text-3xl font-bold text-dark dark:text-white leading-none"></h1>
+                            <span class="gradient-text text-2xl font-bold leading-none ml-1"></span>
                         </div>
-                        <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide">IT-ELAI FINALS</div>
+                        <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide"></div>
                     </div>
                 </div>
 
@@ -885,13 +885,13 @@
                         <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-dribbble"></i></a>
                         <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-behance"></i></a>
-                        <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/ThereseArcenal" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="flex justify-center">
                     <div class="relative animate-float optimize-performance">
-                        <img src="/static/Arcenal1.jpg" alt="Profile" class="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
-                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg">
+                        <img src="/static/me.jfif" alt="Profile" class="rounded-2xl w-80 h-96 object-cover shadow-2xl border-4 border-white" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
+                        <div class="absolute -bottom-3 -right-3 bg-white p-4 rounded-full shadow-lg">
                             <i class="fas fa-palette text-3xl text-primary"></i>
                         </div>
                     </div>
@@ -1119,9 +1119,9 @@
                             Built a web-based sit-in management system for monitoring student sessions, logging activity, and improving record organization for academic labs.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">E-commerce UI</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Mobile Design</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Brand Identity</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Web Dashboard</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Student Management</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">System Design</span>
                         </div>
                     </div>
                 </div>
@@ -1213,7 +1213,7 @@
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1 dark:text-darkText">Message</label>
                             <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your message"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors duration-200 shadow-lg hover-lift fade-in-element" style="animation-delay: 0.4s;">
+                        <button type="submit" id="submit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors duration-200 shadow-lg hover-lift fade-in-element" style="animation-delay: 0.4s;">
                             Send Message
                             <i class="fas fa-paper-plane ml-2"></i>
                         </button>
@@ -1228,7 +1228,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in-element">
-                    <h3 class="text-xl font-bold mb-4">AI<span class="gradient-text">-Arcenal</span></h3>
+                    <h3 class="text-xl font-bold mb-4"><span class="gradient-text"></span></h3>
                     <p class="text-gray-400">Creating digital experiences that inspire and engage users through thoughtful design.</p>
                 </div>
                 <div class="fade-in-element" style="animation-delay: 0.1s;">
@@ -1489,6 +1489,57 @@
                 document.body.style.overflow = 'visible';
             }, 100);
         });
+        
+        // Contact Form Handler
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('submit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                try {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        alert('Message sent successfully! I will get back to you soon.');
+                        contactForm.reset();
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        alert('Error: ' + (data.error || 'Failed to send message'));
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    alert('Error sending message: ' + error.message);
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
