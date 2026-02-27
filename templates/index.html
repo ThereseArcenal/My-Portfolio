@@ -806,7 +806,242 @@
             transition: transform 0.1s linear;
         }
         
-        /* (Flowise attribution styles removed to allow rebranding in JS) */
+        /* Image Gallery Modal Styles */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 100000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .gallery-modal .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            animation: modalFadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .gallery-modal .modal-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-modal .modal-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-modal .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 100001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-modal .close-button:hover {
+            transform: rotate(90deg);
+            background: rgba(236, 72, 153, 0.8);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 100000;
+        }
+
+        .gallery-nav:hover {
+            background: rgba(236, 72, 153, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev {
+            left: 20px;
+        }
+
+        .gallery-nav.next {
+            right: 20px;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .gallery-thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .gallery-thumbnail.active {
+            opacity: 1;
+            border-color: #EC4899;
+            transform: scale(1.1);
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 100000;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Project image click indicator */
+        .project-image-clickable {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image-clickable::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 24px;
+            background: rgba(236, 72, 153, 0.9);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        .project-image-clickable:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .project-image-clickable:hover img {
+            filter: brightness(0.7);
+        }
+
+        /* Smooth transition for more projects */
+        #more-projects {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #more-projects.hidden {
+            display: none;
+        }
+
+        /* Button hover enhancement */
+        #view-all-projects-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #view-all-projects-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(236, 72, 153, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        #view-all-projects-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .more-project-enter {
+            animation: slideInFade 0.5s ease forwards;
+        }
     </style>
 </head>
 <body class="font-sans antialiased dark-mode-transition bg-white dark:bg-darkBg smooth-scroll">
@@ -818,10 +1053,10 @@
                 <div class="flex items-center">
                     <div class="text-left">
                         <div class="flex items-end">
-                            <h1 class="text-3xl font-bold text-dark dark:text-white leading-none"></h1>
-                            <span class="gradient-text text-2xl font-bold leading-none ml-1"></span>
+                            <h1 class="text-3xl font-bold text-dark dark:text-white leading-none">AI</h1>
+                            <span class="gradient-text text-2xl font-bold leading-none ml-1">-ARCENAL</span>
                         </div>
-                        <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide"></div>
+                        <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide">IT-ELAI FINALS</div>
                     </div>
                 </div>
 
@@ -1028,7 +1263,7 @@
                     <ul class="space-y-3 text-gray-600 dark:text-gray-400">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-primary mr-2"></i>
-                            Figma & Adobe XD
+                            Figma 
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-primary mr-2"></i>
@@ -1059,7 +1294,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-48 overflow-hidden relative project-image-clickable">
                         <img 
                             src="/static/images/Clearcause.jpg" 
                             alt="ClearCause Donation Platform" 
@@ -1082,7 +1317,7 @@
 
                 <!-- Project 2 -->
                 <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element" style="animation-delay: 0.1s;">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-48 overflow-hidden relative project-image-clickable">
                         <img 
                             src="/static/images/Subdivision.jpg" 
                             alt="House Subdivision Platform" 
@@ -1105,7 +1340,7 @@
 
                 <!-- Project 3 -->
                 <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element" style="animation-delay: 0.2s;">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-48 overflow-hidden relative project-image-clickable">
                         <img 
                             src="/static/images/sitin.jpg" 
                             alt="SIT IN Platform" 
@@ -1126,11 +1361,64 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Hidden Additional Projects (2 more) -->
+            <div id="more-projects" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <!-- Project 4 -->
+                    <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element">
+                        <div class="h-48 overflow-hidden relative project-image-clickable">
+                            <img 
+                                src="/static/images/project4.jpg" 
+                                alt="E-Commerce Mobile App" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">Underground Apparel</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-400">
+                                A fully responsive mobile e-commerce application with intuitive product browsing and seamless checkout experience.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Web Design</span>
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element">
+                        <div class="h-48 overflow-hidden relative project-image-clickable">
+                            <img 
+                                src="/static/images/project5.jpg" 
+                                alt="Healthcare Dashboard" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark dark:text-darkText">SK Tinago</h3>
+                            <p class="text-gray-600 mb-4 dark:text-gray-400">
+                                Comprehensive healthcare management system for patient records, appointments, and medical staff coordination.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Dashboard Design</span>
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Data Visualization</span>
+                                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">User Flows</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All / Show Less Button -->
             <div class="text-center mt-12 fade-in-element" style="animation-delay: 0.3s;">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-colors duration-200 hover-lift dark:border-primary dark:text-primary">
-                    View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <button id="view-all-projects-btn" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-all duration-300 hover-lift dark:border-primary dark:text-primary group">
+                    <span id="btn-text">View All Projects</span>
+                    <i id="btn-icon" class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -1228,7 +1516,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in-element">
-                    <h3 class="text-xl font-bold mb-4"><span class="gradient-text"></span></h3>
+                    <h3 class="text-xl font-bold mb-4">AI<span class="gradient-text">-Arcenal</span></h3>
                     <p class="text-gray-400">Creating digital experiences that inspire and engage users through thoughtful design.</p>
                 </div>
                 <div class="fade-in-element" style="animation-delay: 0.1s;">
@@ -1272,7 +1560,21 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Enhanced JavaScript -->
+    <!-- Image Gallery Modal -->
+    <div id="image-gallery-modal" class="gallery-modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="gallery.closeModal()">&times;</span>
+            <div class="modal-image-container">
+                <img class="modal-image" src="" alt="Gallery Image">
+                <span class="gallery-nav prev" onclick="gallery.prevImage()">❮</span>
+                <span class="gallery-nav next" onclick="gallery.nextImage()">❯</span>
+                <div class="image-counter">1/1</div>
+            </div>
+            <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript with Gallery and View All Projects -->
     <script>
         // Dark mode functionality
         const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -1323,7 +1625,82 @@
             });
         }
 
-        // Enhanced Smooth scrolling for anchor links with offset
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        let isScrolling = false;
+
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTopButton.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'pointer-events-auto');
+                    backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                smoothScrollTo(0, 800);
+            });
+        }
+
+        // Ultra-smooth scrolling function
+        function smoothScrollTo(targetPosition, duration = 1000) {
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+            let animationFrameId = null;
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                
+                // Custom cubic-bezier easing for ultra-smooth feel
+                const ease = cubicBezier(0.25, 0.1, 0.25, 1.0, progress);
+                
+                window.scrollTo(0, startPosition + distance * ease);
+                
+                if (progress < 1) {
+                    animationFrameId = requestAnimationFrame(animation);
+                }
+            }
+
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            
+            animationFrameId = requestAnimationFrame(animation);
+        }
+
+        // Cubic bezier easing function
+        function cubicBezier(x1, y1, x2, y2, t) {
+            // Convert to polynomial form
+            const cx = 3 * x1;
+            const bx = 3 * (x2 - x1) - cx;
+            const ax = 1 - cx - bx;
+            
+            const cy = 3 * y1;
+            const by = 3 * (y2 - y1) - cy;
+            const ay = 1 - cy - by;
+            
+            // Solve for x(t) using Newton's method
+            let x = t;
+            for (let i = 0; i < 8; i++) {
+                const x2 = x * x;
+                const x3 = x2 * x;
+                const fx = ax * x3 + bx * x2 + cx * x - t;
+                const dfx = 3 * ax * x2 + 2 * bx * x + cx;
+                x -= fx / dfx;
+            }
+            
+            // Calculate y(t)
+            const y = ay * x * x * x + by * x * x + cy * x;
+            return y;
+        }
+
+        // Enhanced Smooth scrolling for anchor links with momentum scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1336,29 +1713,21 @@
                     const headerHeight = document.querySelector('nav').offsetHeight;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
-                    // Use requestAnimationFrame for smoother animation
-                    const startPosition = window.pageYOffset;
-                    const distance = targetPosition - startPosition;
-                    const duration = 800; // milliseconds
-                    let startTime = null;
+                    // Add click animation effect to the link
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
                     
-                    function animation(currentTime) {
-                        if (startTime === null) startTime = currentTime;
-                        const timeElapsed = currentTime - startTime;
-                        const run = ease(timeElapsed, startPosition, distance, duration);
-                        window.scrollTo(0, run);
-                        if (timeElapsed < duration) requestAnimationFrame(animation);
-                    }
+                    // Smooth scroll to target
+                    smoothScrollTo(targetPosition, 1200);
                     
-                    // Easing function for smooth scroll
-                    function ease(t, b, c, d) {
-                        t /= d / 2;
-                        if (t < 1) return c / 2 * t * t + b;
-                        t--;
-                        return -c / 2 * (t * (t - 2) - 1) + b;
-                    }
-                    
-                    requestAnimationFrame(animation);
+                    // Add highlight effect to target section
+                    targetElement.style.boxShadow = '0 0 0 2px rgba(236, 72, 153, 0.3)';
+                    setTimeout(() => {
+                        targetElement.style.boxShadow = '';
+                        targetElement.style.transition = 'box-shadow 0.5s ease';
+                    }, 1500);
                     
                     // Close mobile menu if open
                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
@@ -1368,28 +1737,45 @@
             });
         });
 
-        // Navbar background change on scroll with debounce
-        let scrollTimeout;
+        // Enhanced Navbar with smooth transitions
+        let lastScrollTop = 0;
+        let ticking = false;
+
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            
-            // Clear the timeout if it's already set
-            if (scrollTimeout) {
-                cancelAnimationFrame(scrollTimeout);
-            }
-            
-            // Use requestAnimationFrame for smoother scroll handling
-            scrollTimeout = requestAnimationFrame(function() {
-                if (navbar) {
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('shadow-md', 'bg-opacity-95', 'backdrop-blur-sm');
-                        navbar.classList.remove('bg-opacity-100');
-                    } else {
-                        navbar.classList.remove('shadow-md', 'bg-opacity-95', 'backdrop-blur-sm');
-                        navbar.classList.add('bg-opacity-100');
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const navbar = document.getElementById('navbar');
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (navbar) {
+                        // Show/hide based on scroll direction
+                        if (scrollTop > lastScrollTop && scrollTop > 100) {
+                            // Scrolling down - hide navbar slightly
+                            navbar.style.transform = 'translateY(-10px)';
+                            navbar.style.opacity = '0.9';
+                        } else {
+                            // Scrolling up - show navbar
+                            navbar.style.transform = 'translateY(0)';
+                            navbar.style.opacity = '1';
+                        }
+                        
+                        // Add shadow when scrolled
+                        if (scrollTop > 50) {
+                            navbar.classList.add('shadow-lg', 'bg-opacity-95', 'backdrop-blur-sm', 'dark:bg-opacity-95');
+                            navbar.classList.remove('bg-opacity-100');
+                        } else {
+                            navbar.classList.remove('shadow-lg', 'bg-opacity-95', 'backdrop-blur-sm', 'dark:bg-opacity-95');
+                            navbar.classList.add('bg-opacity-100');
+                        }
+                        
+                        lastScrollTop = scrollTop;
                     }
-                }
-            });
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
         });
 
         // Parallax effect for hero section
@@ -1406,90 +1792,381 @@
 
         // Initialize animations with Intersection Observer
         function initAnimations() {
-            // Animate skills items with staggered delay
+            // Animate skills items with staggered delay and bounce effect
             const skillItems = document.querySelectorAll('.skill-item');
             skillItems.forEach((item, index) => {
                 setTimeout(() => {
                     item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                    item.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    item.style.transform = 'translateY(0) scale(1)';
+                    item.style.transition = 'opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    
+                    // Add hover effect
+                    item.addEventListener('mouseenter', () => {
+                        item.style.transform = 'translateY(-5px) scale(1.02)';
+                    });
+                    
+                    item.addEventListener('mouseleave', () => {
+                        item.style.transform = 'translateY(0) scale(1)';
+                    });
                 }, index * 200);
             });
             
-            // Enhanced Intersection Observer for section animations
+            // Enhanced Intersection Observer for section animations with parallax
             const sections = document.querySelectorAll('.section-hidden');
-            const fadeElements = document.querySelectorAll('.fade-in-element');
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
             
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('section-visible');
-                        // Add a subtle delay for children
+                        
+                        // Add subtle parallax to child elements
                         const children = entry.target.querySelectorAll('.fade-in-element');
                         children.forEach((child, index) => {
                             setTimeout(() => {
                                 child.classList.add('visible');
-                            }, index * 100);
+                                
+                                // Add subtle translate effect based on position
+                                const delay = index * 100;
+                                setTimeout(() => {
+                                    child.style.transform = 'translateY(0)';
+                                }, delay);
+                            }, index * 150);
                         });
                     }
                 });
-            }, observerOptions);
-            
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
             }, {
-                threshold: 0.2,
-                rootMargin: '50px'
+                threshold: 0.05,
+                rootMargin: '0px 0px -100px 0px'
             });
             
             sections.forEach(section => {
                 sectionObserver.observe(section);
             });
             
+            // Enhanced fade observer
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, 100);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
             fadeElements.forEach(element => {
                 fadeObserver.observe(element);
             });
             
-            // Add hover effects to project cards
+            // Enhanced hover effects for project cards
             const projectCards = document.querySelectorAll('.hover-lift');
             projectCards.forEach(card => {
+                card.style.willChange = 'transform, box-shadow';
+                card.style.backfaceVisibility = 'hidden';
+                
                 card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                    card.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    card.style.boxShadow = '0 20px 40px -10px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.boxShadow = '';
                 });
             });
         }
 
-        // Initialize everything on DOM content loaded
+        // View All Projects Toggle Functionality
+        function initViewAllProjects() {
+            const viewAllBtn = document.getElementById('view-all-projects-btn');
+            const moreProjects = document.getElementById('more-projects');
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+            
+            let isExpanded = false;
+            
+            if (viewAllBtn && moreProjects) {
+                viewAllBtn.addEventListener('click', function() {
+                    if (!isExpanded) {
+                        // Show more projects with smooth animation
+                        moreProjects.classList.remove('hidden');
+                        moreProjects.style.opacity = '0';
+                        moreProjects.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            moreProjects.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                            moreProjects.style.opacity = '1';
+                            moreProjects.style.transform = 'translateY(0)';
+                        }, 10);
+                        
+                        btnText.textContent = 'Show Less';
+                        btnIcon.className = 'fas fa-arrow-up ml-2 group-hover:-translate-y-1 transition-transform duration-300';
+                        isExpanded = true;
+                        
+                        // Smooth scroll to show new projects
+                        setTimeout(() => {
+                            moreProjects.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 100);
+                    } else {
+                        // Hide more projects
+                        moreProjects.style.opacity = '0';
+                        moreProjects.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            moreProjects.classList.add('hidden');
+                            moreProjects.style.transition = '';
+                        }, 500);
+                        
+                        btnText.textContent = 'View All Projects';
+                        btnIcon.className = 'fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300';
+                        isExpanded = false;
+                    }
+                });
+            }
+        }
+
+        // Image Gallery Class
+        class ImageGallery {
+            constructor() {
+                this.modal = document.getElementById('image-gallery-modal');
+                this.currentImageIndex = 0;
+                this.currentProjectImages = [];
+                this.init();
+            }
+
+            init() {
+                // Add click listeners to all project images
+                this.addClickListenersToImages();
+                
+                // Add keyboard navigation
+                this.addKeyboardNavigation();
+                
+                // Add touch swipe support
+                this.addTouchSupport();
+            }
+
+            addClickListenersToImages() {
+                const projectImages = document.querySelectorAll('.project-image-clickable');
+                
+                projectImages.forEach((container) => {
+                    container.addEventListener('click', (e) => {
+                        const projectCard = container.closest('.bg-light');
+                        this.openGallery(projectCard);
+                    });
+                });
+            }
+
+            openGallery(projectCard) {
+                // Get project title for image grouping
+                const projectTitle = projectCard.querySelector('h3')?.textContent || 'Project';
+                
+                // Define images for each project (you can replace these with your actual image paths)
+                const projectImages = {
+                    'ClearCause Donation Platform': [
+                        { src: '/static/images/Clearcause1.jpg', alt: 'ClearCause Dashboard' },
+                        { src: '/static/images/Clearcause2.jpg', alt: 'ClearCause Donation Flow' },
+                        { src: '/static/images/Clearcause3.jpg', alt: 'ClearCause Mobile View' },
+                        { src: '/static/images/Clearcause4.jpg', alt: 'ClearCause Analytics' }
+                    ],
+                    'House Subdivision Platform': [
+                        { src: '/static/images/Subdivision1.jpg', alt: 'Subdivision Dashboard' },
+                        { src: '/static/images/Subdivision2.jpg', alt: 'Property Listings' },
+                        { src: '/static/images/Subdivision3.jpg', alt: 'Resident Management' },
+                        { src: '/static/images/Subdivision4.jpg', alt: 'Map View' }
+                    ],
+                    'SIT-IN Platform': [
+                        { src: '/static/images/sitin1.png', alt: 'SIT-IN Dashboard' },
+                        { src: '/static/images/sitin2.png', alt: 'Student Sessions' },
+                        { src: '/static/images/sitin3.png', alt: 'Activity Log' },
+                        { src: '/static/images/sitin4.png', alt: 'Reports' }
+                    ],
+                    'E-Commerce Mobile App': [
+                        { src: '/static/images/project4-1.jpg', alt: 'E-Commerce Home' },
+                        { src: '/static/images/project4-2.jpg', alt: 'Product Page' },
+                        { src: '/static/images/project4-3.jpg', alt: 'Checkout Flow' },
+                        { src: '/static/images/project4-4.jpg', alt: 'User Profile' }
+                    ],
+                    'Healthcare Dashboard': [
+                        { src: '/static/images/project5-1.jpg', alt: 'Dashboard Overview' },
+                        { src: '/static/images/project5-2.jpg', alt: 'Patient Records' },
+                        { src: '/static/images/project5-3.jpg', alt: 'Appointments' },
+                        { src: '/static/images/project5-4.jpg', alt: 'Analytics' }
+                    ]
+                };
+
+                // Get images for this project or use fallback with the main image
+                this.currentProjectImages = projectImages[projectTitle] || [
+                    { src: projectCard.querySelector('img')?.src, alt: projectTitle },
+                    { src: 'https://images.unsplash.com/photo-1551836026-d5c2c26fc3b6?w=800', alt: 'Design Concept 1' },
+                    { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800', alt: 'Design Concept 2' },
+                    { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800', alt: 'Design Concept 3' }
+                ];
+
+                this.currentImageIndex = 0;
+                this.showModal();
+                this.updateGalleryImage();
+                this.createThumbnails();
+            }
+
+            showModal() {
+                this.modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            closeModal() {
+                this.modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            updateGalleryImage() {
+                const modalImage = this.modal.querySelector('.modal-image');
+                const counter = this.modal.querySelector('.image-counter');
+                
+                if (this.currentProjectImages[this.currentImageIndex]) {
+                    modalImage.src = this.currentProjectImages[this.currentImageIndex].src;
+                    modalImage.alt = this.currentProjectImages[this.currentImageIndex].alt;
+                    counter.textContent = `${this.currentImageIndex + 1}/${this.currentProjectImages.length}`;
+                    
+                    // Update active thumbnail
+                    const thumbnails = this.modal.querySelectorAll('.gallery-thumbnail');
+                    thumbnails.forEach((thumb, index) => {
+                        if (index === this.currentImageIndex) {
+                            thumb.classList.add('active');
+                        } else {
+                            thumb.classList.remove('active');
+                        }
+                    });
+                }
+            }
+
+            nextImage() {
+                if (this.currentImageIndex < this.currentProjectImages.length - 1) {
+                    this.currentImageIndex++;
+                } else {
+                    this.currentImageIndex = 0; // Loop back to first
+                }
+                this.updateGalleryImage();
+            }
+
+            prevImage() {
+                if (this.currentImageIndex > 0) {
+                    this.currentImageIndex--;
+                } else {
+                    this.currentImageIndex = this.currentProjectImages.length - 1; // Loop to last
+                }
+                this.updateGalleryImage();
+            }
+
+            createThumbnails() {
+                const thumbnailContainer = this.modal.querySelector('#gallery-thumbnails');
+                thumbnailContainer.innerHTML = '';
+                
+                this.currentProjectImages.forEach((image, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = image.src;
+                    thumb.alt = image.alt;
+                    thumb.className = `gallery-thumbnail ${index === this.currentImageIndex ? 'active' : ''}`;
+                    thumb.onerror = function() {
+                        this.src = 'https://via.placeholder.com/80x80?text=Image';
+                    };
+                    thumb.addEventListener('click', () => {
+                        this.currentImageIndex = index;
+                        this.updateGalleryImage();
+                    });
+                    thumbnailContainer.appendChild(thumb);
+                });
+            }
+
+            addKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (!this.modal.classList.contains('active')) return;
+                    
+                    switch(e.key) {
+                        case 'Escape':
+                            this.closeModal();
+                            break;
+                        case 'ArrowRight':
+                            this.nextImage();
+                            break;
+                        case 'ArrowLeft':
+                            this.prevImage();
+                            break;
+                    }
+                });
+            }
+
+            addTouchSupport() {
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                this.modal.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                
+                this.modal.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    this.handleSwipe(touchStartX, touchEndX);
+                }, { passive: true });
+            }
+
+            handleSwipe(startX, endX) {
+                if (!this.modal.classList.contains('active')) return;
+                
+                const swipeThreshold = 50;
+                const swipeDistance = endX - startX;
+                
+                if (Math.abs(swipeDistance) > swipeThreshold) {
+                    if (swipeDistance > 0) {
+                        // Swipe right - previous image
+                        this.prevImage();
+                    } else {
+                        // Swipe left - next image
+                        this.nextImage();
+                    }
+                }
+            }
+        }
+
+        // Initialize everything
         document.addEventListener('DOMContentLoaded', function() {
+            // Make page visible immediately
+            document.body.style.opacity = '1';
+            document.body.style.overflow = 'visible';
+            
             initAnimations();
             initParallax();
+            initViewAllProjects(); // Initialize View All Projects functionality
             
-            // Prevent scroll jank on mobile
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (Math.abs(scrollTop - lastScrollTop) <= 5) return;
-                lastScrollTop = scrollTop;
-            }, { passive: true });
+            // Initialize gallery
+            window.gallery = new ImageGallery();
+            
+            // Add error handling for images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    const alt = this.alt.toLowerCase();
+                    if (alt.includes('clear cause') || alt.includes('donation')) {
+                        this.src = 'https://images.unsplash.com/photo-1551836026-d5c2c26fc3b6?w=800';
+                    } else if (alt.includes('subdivision') || alt.includes('property')) {
+                        this.src = 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800';
+                    } else if (alt.includes('sit-in') || alt.includes('student')) {
+                        this.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800';
+                    } else if (alt.includes('e-commerce') || alt.includes('mobile')) {
+                        this.src = 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800';
+                    } else if (alt.includes('healthcare') || alt.includes('dashboard')) {
+                        this.src = 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800';
+                    } else {
+                        this.src = 'https://images.unsplash.com/photo-1551836026-d5c2c26fc3b6?w=800';
+                    }
+                });
+            });
         });
 
-        // Add smooth page load transition
-        window.addEventListener('load', function() {
-            // Additional load optimizations
-            setTimeout(() => {
-                document.body.style.overflow = 'visible';
-            }, 100);
-        });
-        
         // Contact Form Handler
         const contactForm = document.querySelector('#contact form');
         if (contactForm) {
@@ -1510,29 +2187,17 @@
                         message: document.getElementById('message').value
                     };
                     
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    });
+                    // Simulate API call (replace with actual endpoint)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
                     
-                    const data = await response.json();
-                    
-                    if (response.ok) {
-                        alert('Message sent successfully! I will get back to you soon.');
-                        contactForm.reset();
-                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                        setTimeout(() => {
-                            submitBtn.innerHTML = originalText;
-                            submitBtn.disabled = false;
-                        }, 3000);
-                    } else {
-                        alert('Error: ' + (data.error || 'Failed to send message'));
+                    alert('Message sent successfully! I will get back to you soon.');
+                    contactForm.reset();
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    setTimeout(() => {
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
-                    }
+                    }, 3000);
+                    
                 } catch (error) {
                     alert('Error sending message: ' + error.message);
                     submitBtn.innerHTML = originalText;
