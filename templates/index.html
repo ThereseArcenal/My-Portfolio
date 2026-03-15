@@ -1423,7 +1423,7 @@
             <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element">
                 <div class="h-48 overflow-hidden relative project-image-clickable">
                     <img 
-                        src="/static/images/dpwh-portal.jpg" 
+                        src="/static/images/landing.png" 
                         alt="DPWH Web-Portal" 
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
@@ -2116,57 +2116,66 @@
                 });
             }
 
-            openGallery(projectCard) {
-                // Get project title for image grouping
-                const projectTitle = projectCard.querySelector('h3')?.textContent || 'Project';
-                
-                // Define images for each project (you can replace these with your actual image paths)
-                const projectImages = {
-                    'ClearCause Donation Platform': [
-                        { src: '/static/images/Clearcause1.jpg', alt: 'ClearCause Dashboard' },
-                        { src: '/static/images/Clearcause2.jpg', alt: 'ClearCause Donation Flow' },
-                        { src: '/static/images/Clearcause3.jpg', alt: 'ClearCause Mobile View' },
-                        { src: '/static/images/Clearcause4.jpg', alt: 'ClearCause Analytics' }
-                    ],
-                    'House Subdivision Platform': [
-                        { src: '/static/images/Subdivision1.jpg', alt: 'Subdivision Dashboard' },
-                        { src: '/static/images/Subdivision2.jpg', alt: 'Property Listings' },
-                        { src: '/static/images/Subdivision3.jpg', alt: 'Resident Management' },
-                        { src: '/static/images/Subdivision4.jpg', alt: 'Map View' }
-                    ],
-                    'SIT-IN Platform': [
-                        { src: '/static/images/sitin1.png', alt: 'SIT-IN Dashboard' },
-                        { src: '/static/images/sitin2.png', alt: 'Student Sessions' },
-                        { src: '/static/images/sitin3.png', alt: 'Activity Log' },
-                        { src: '/static/images/sitin4.png', alt: 'Reports' }
-                    ],
-                    'Underground Apparel': [
-                        { src: '/static/images/UA1.jpg', alt: 'E-Commerce Home' },
-                        { src: '/static/images/UA2.jpg', alt: 'Product Page' },
-                        { src: '/static/images/UA3.jpg', alt: 'Checkout Flow' },
-                        { src: '/static/images/UA4.jpg', alt: 'User Profile' }
-                    ],
-                    'Nike Jordan Design': [
-                        { src: '/static/images/Nike.jpg', alt: 'Dashboard Overview' },
-                        { src: '/static/images/Nike1.jpg', alt: 'Patient Records' },
-                        { src: '/static/images/Nike2.jpg', alt: 'Appointments' },
-                        { src: '/static/images/Nike4.jpg', alt: 'Analytics' }
-                    ]
-                };
+           openGallery(projectCard) {
+    // Get project title for image grouping
+    const projectTitle = projectCard.querySelector('h3')?.textContent || 'Project';
+    
+    // Define images for each project (update this section)
+    const projectImages = {
+        'DPWH Web-Portal': [  // Add this new entry for your DPWH project
+            { src: '/static/images/landing.png', alt: 'DPWH Portal - Landing Page' },
+            { src: '/static/images/DPWH1.png', alt: 'DPWH Portal - Core Values' },
+            { src: '/static/images/DPWH2.png', alt: 'DPWH Portal - Vision & Mission' },
+            { src: '/static/images/DPWH3.png', alt: 'DPWH Portal - Quality Policy' },
+            { src: '/static/images/DPWH4.png', alt: 'DPWH Portal - Organizational Chart' }
+        ],
+        'ClearCause Donation Platform': [
+            { src: '/static/images/Clearcause1.jpg', alt: 'ClearCause Dashboard' },
+            { src: '/static/images/Clearcause2.jpg', alt: 'ClearCause Donation Flow' },
+            { src: '/static/images/Clearcause3.jpg', alt: 'ClearCause Mobile View' },
+            { src: '/static/images/Clearcause4.jpg', alt: 'ClearCause Analytics' }
+        ],
+        'House Subdivision Platform': [
+            { src: '/static/images/Subdivision1.jpg', alt: 'Subdivision Dashboard' },
+            { src: '/static/images/Subdivision2.jpg', alt: 'Property Listings' },
+            { src: '/static/images/Subdivision3.jpg', alt: 'Resident Management' },
+            { src: '/static/images/Subdivision4.jpg', alt: 'Map View' }
+        ],
+        'SIT-IN Platform': [
+            { src: '/static/images/sitin1.png', alt: 'SIT-IN Dashboard' },
+            { src: '/static/images/sitin2.png', alt: 'Student Sessions' },
+            { src: '/static/images/sitin3.png', alt: 'Activity Log' },
+            { src: '/static/images/sitin4.png', alt: 'Reports' }
+        ],
+        'Underground Apparel': [
+            { src: '/static/images/UA.jpg', alt: 'Underground Apparel Home' },
+            { src: '/static/images/UA1.jpg', alt: 'Product Page' },
+            { src: '/static/images/UA2.jpg', alt: 'Checkout Flow' },
+            { src: '/static/images/UA3.jpg', alt: 'User Profile' },
+            { src: '/static/images/UA4.jpg', alt: 'Mobile View' }
+        ],
+        'Nike Jordan Concept': [
+            { src: '/static/images/Nike1.jpg', alt: 'Nike Jordan Home' },
+            { src: '/static/images/Nike2.jpg', alt: 'Product Showcase' },
+            { src: '/static/images/Nike3.jpg', alt: 'Color Variations' },
+            { src: '/static/images/Nike4.jpg', alt: 'Details View' }
+        ]
+    };
 
-                // Get images for this project or use fallback with the main image
-                this.currentProjectImages = projectImages[projectTitle] || [
-                    { src: projectCard.querySelector('img')?.src, alt: projectTitle },
-                    { src: 'https://images.unsplash.com/photo-1551836026-d5c2c26fc3b6?w=800', alt: 'Design Concept 1' },
-                    { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800', alt: 'Design Concept 2' },
-                    { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800', alt: 'Design Concept 3' }
-                ];
+    // Get images for this project or use fallback with the main image
+this.currentProjectImages = projectImages[projectTitle] || [
+    { src: projectCard.querySelector('img')?.src, alt: projectTitle },
+    { src: '/static/images/DPWH1.png', alt: 'DPWH Portal - Core Values' },
+    { src: '/static/images/DPWH2.png', alt: 'DPWH Portal - Vision & Mission' },
+    { src: '/static/images/DPWH3.png', alt: 'DPWH Portal - Quality Policy' },
+    { src: '/static/images/DPWH4.png', alt: 'DPWH Portal - Organizational Chart' }
+];
 
-                this.currentImageIndex = 0;
-                this.showModal();
-                this.updateGalleryImage();
-                this.createThumbnails();
-            }
+    this.currentImageIndex = 0;
+    this.showModal();
+    this.updateGalleryImage();
+    this.createThumbnails();
+}
 
             showModal() {
                 this.modal.classList.add('active');
