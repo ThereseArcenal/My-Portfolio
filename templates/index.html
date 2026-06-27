@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wheth=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therese Arcenal | Portfolio</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -612,11 +612,13 @@
         body {
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
-            background-color: #ffffff !important;
+            background-color: #020617 !important;
+            color: #f8fafc !important;
         }
         
         .dark body {
             background-color: #111827 !important;
+            color: #f8fafc !important;
         }
         
         .gradient-text {
@@ -798,6 +800,65 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Better mobile hero layout */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2.25rem;
+                line-height: 1.1;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-section .stats-grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+
+            .hero-section .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-card {
+                margin-top: 1.5rem;
+            }
+
+            .hero-card .absolute.left-6,
+            .hero-card .absolute.right-6 {
+                left: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav > div {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .dark-mode-switch {
+                display: none;
+            }
+
+            .hero-section .inline-flex {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-section .stats-grid {
+                gap: 0.75rem;
             }
         }
         
@@ -1044,158 +1105,84 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased dark-mode-transition bg-white dark:bg-darkBg smooth-scroll">
+<body class="font-sans antialiased bg-slate-950 text-slate-100">
     <!-- Navigation -->
-    <nav id="navbar" class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 dark:bg-darkBg optimize-performance">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Left side: Logo -->
-                <div class="flex items-center">
-                    <div class="text-left">
-                        <div class="flex items-end">
-                            <h1 class="text-3xl font-bold text-dark dark:text-white leading-none"></h1>
-                            <span class="gradient-text text-2xl font-bold leading-none ml-1"></span>
-                        </div>
-                        <div class="text-dark dark:text-white text-sm font-semibold leading-tight mt-1 tracking-wide"></div>
-                    </div>
+    <nav id="navbar" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur-xl shadow-2xl shadow-black/30">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="#home" class="flex items-center gap-3">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-lg font-semibold text-white shadow-lg shadow-fuchsia-500/25">G</span>
+                <div>
+                    <p class="text-base font-semibold text-white">Gale Arcenal</p>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Design & Development</p>
                 </div>
-
-                <!-- Right side: Navigation links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="flex items-center space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Home</a>
-                        <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">About</a>
-                        <a href="#skills" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Skills</a>
-                        <a href="#projects" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Projects</a>
-                        <a href="#contact" class="text-gray-700 hover:text-primary px-3 py-2 font-medium transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Contact</a>
-                    </div>
-                    
-                    <!-- Dark Mode Toggle -->
-                    <div class="flex items-center ml-8 fade-in-element">
-                        <label class="dark-mode-switch">
-                            <input type="checkbox" id="dark-mode-toggle">
-                            <span class="dark-mode-slider"></span>
-                        </label>
-                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-200">Dark</span>
-                    </div>
-                </div>
-
-                <div class="md:hidden flex items-center space-x-4">
-                    <!-- Dark Mode Toggle for Mobile -->
-                    <div class="flex items-center fade-in-element">
-                        <label class="dark-mode-switch">
-                            <input type="checkbox" id="dark-mode-toggle-mobile">
-                            <span class="dark-mode-slider"></span>
-                        </label>
-                    </div>
-                    
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none dark:text-gray-200 dark:hover:text-primary fade-in-element">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+            </a>
+            <div class="hidden items-center gap-8 md:flex">
+                <a href="#home" class="text-sm font-medium text-slate-300 transition hover:text-white">Home</a>
+                <a href="#about" class="text-sm font-medium text-slate-300 transition hover:text-white">About</a>
+                <a href="#skills" class="text-sm font-medium text-slate-300 transition hover:text-white">Skills</a>
+                <a href="#projects" class="text-sm font-medium text-slate-300 transition hover:text-white">Projects</a>
+                <a href="#contact" class="text-sm font-medium text-slate-300 transition hover:text-white">Contact</a>
             </div>
+            <div class="hidden items-center gap-4 md:flex">
+                <label class="dark-mode-switch mb-0">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="dark-mode-slider"></span>
+                </label>
+                <span class="text-sm text-slate-400">Dark</span>
+            </div>
+            <button id="mobile-menu-button" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-4 py-2 text-sm text-white transition hover:border-white/20 md:hidden">
+                <i class="fas fa-bars"></i> Menu
+            </button>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkBg pb-3 px-4">
-            <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Home</a>
-            <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">About</a>
-            <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Skills</a>
-            <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Projects</a>
-            <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200 dark:text-gray-200 dark:hover:text-primary fade-in-element">Contact</a>
+        <div id="mobile-menu" class="hidden border-t border-white/10 bg-slate-950/95 px-4 pb-4 md:hidden">
+            <a href="#home" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Home</a>
+            <a href="#about" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">About</a>
+            <a href="#skills" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Skills</a>
+            <a href="#projects" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Projects</a>
+            <a href="#contact" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Contact</a>
         </div>
     </nav>
 
  <!-- Hero Section -->
-<section id="home" class="bg-gradient-to-r from-primary to-secondary text-white py-24 min-h-screen flex items-center parallax-element">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="text-left z-10">
-                <div class="mb-2 fade-in-element">
-                    <span class="text-lg font-medium text-white/80">Frontend Developer & UI/UX Designer</span>
+<section id="home" class="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,_rgba(236,72,153,0.22),transparent_18%),radial-gradient(circle_at_bottom_left,_rgba(59,130,246,0.14),transparent_20%),#020617] py-24 lg:py-32">
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.40),rgba(15,23,42,0.90))] pointer-events-none"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-[1.3fr_0.9fr]">
+            <div class="space-y-8 text-center sm:text-left">
+                <div class="inline-flex items-center justify-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm text-slate-200 backdrop-blur-lg ring-1 ring-white/10 mx-auto sm:mx-0">
+                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-500 text-white">★</span>
+                    <span>Frontend Developer • UI/UX Designer</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in fade-in-element">Crafting Digital <span class="text-white">Experiences</span> That Inspire</h2>
-                <p class="text-lg md:text-xl mb-8 opacity-95 animate-fade-in fade-in-element" style="animation-delay: 0.2s;">Welcome to my creative space! I'm a passionate Frontend Developer and UI/UX Designer dedicated to transforming ideas into intuitive, responsive, and beautiful digital experiences that users love.</p>
-                <div class="flex flex-wrap gap-4 animate-fade-in fade-in-element" style="animation-delay: 0.4s;">
-                    <a href="#projects" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 shadow-lg hover-lift">View My Work</a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-200 hover-lift">Hire Me</a>
+                <div class="space-y-6">
+                    <h1 class="max-w-3xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">Creating elegant, high-impact digital experiences for modern brands.</h1>
+                    <p class="max-w-2xl text-lg leading-8 text-slate-300">I design and build polished websites, interfaces, and brand experiences that help businesses stand out, engage users, and grow with confidence.</p>
                 </div>
-                
-                <!-- Tech Stack Categories -->
-                <div class="mt-8 space-y-4 animate-fade-in fade-in-element" style="animation-delay: 0.5s;">
-                    <!-- Programming Languages -->
-                    <div class="flex items-start space-x-4">
-                        <span class="text-sm font-medium text-white/80 min-w-[100px]">Programming:</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Python">
-                                <i class="fab fa-python mr-1"></i> Python
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="HTML5">
-                                <i class="fab fa-html5 mr-1"></i> HTML
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="CSS3">
-                                <i class="fab fa-css3-alt mr-1"></i> CSS
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="JavaScript">
-                                <i class="fab fa-js mr-1"></i> JavaScript
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <!-- Web & Tools -->
-                    <div class="flex items-start space-x-4">
-                        <span class="text-sm font-medium text-white/80 min-w-[100px]">Web & Tools:</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Tailwind CSS">
-                                <i class="fas fa-wind mr-1"></i> Tailwind CSS
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Bootstrap">
-                                <i class="fab fa-bootstrap mr-1"></i> Bootstrap
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Flask">
-                                <i class="fas fa-flask mr-1"></i> Flask
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <!-- UI/UX -->
-                    <div class="flex items-start space-x-4">
-                        <span class="text-sm font-medium text-white/80 min-w-[100px]">UI/UX:</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Figma">
-                                <i class="fab fa-figma mr-1"></i> Figma
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Wireframing">
-                                <i class="fas fa-draw-polygon mr-1"></i> Wireframing
-                            </span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm flex items-center" title="Prototyping">
-                                <i class="fas fa-mouse-pointer mr-1"></i> Prototyping
-                            </span>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap justify-center gap-4 sm:justify-start">
+                    <a href="#projects" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-950 shadow-2xl shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-100">Explore Work</a>
+                    <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10">Start a Project</a>
                 </div>
-                
-                <div class="mt-10 flex space-x-6 animate-fade-in fade-in-element" style="animation-delay: 0.6s;">
-                    <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-dribbble"></i></a>
-                    <a href="#" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-behance"></i></a>
-                    <a href="https://github.com/ThereseArcenal" class="text-white hover:text-gray-300 transition-colors duration-200 transform hover:scale-110 text-2xl"><i class="fab fa-github"></i></a>
+                <div class="grid gap-4 sm:grid-cols-3 justify-items-center sm:justify-items-stretch">
+                    <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Projects</p>
+                        <p class="mt-4 text-3xl font-semibold text-white">6+</p>
+                    </div>
+                    <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Experience</p>
+                        <p class="mt-4 text-3xl font-semibold text-white">3+ yrs</p>
+                    </div>
+                    <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Clients</p>
+                        <p class="mt-4 text-3xl font-semibold text-white">10+</p>
+                    </div>
                 </div>
             </div>
-            <div class="flex justify-center">
-                <div class="relative animate-float optimize-performance group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                    <img src="/static/me.png" alt="Therese Andrei C. Arcenal" class="relative rounded-2xl w-80 h-96 object-cover shadow-2xl border-4 border-white" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
-                    <div class="absolute -bottom-3 -right-3 bg-white p-4 rounded-full shadow-lg animate-pulse-slow">
-                        <i class="fas fa-code text-3xl text-primary"></i>
-                    </div>
-                    
-                    <!-- Floating badges -->
-                    <div class="absolute -top-4 -left-4 bg-white text-primary px-4 py-2 rounded-full shadow-lg text-sm font-semibold animate-bounce">
-                        <i class="fas fa-code mr-1"></i> Frontend Dev
-                    </div>
-                    <div class="absolute -bottom-4 -left-4 bg-white text-primary px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
-                        <i class="fas fa-paint-brush mr-1"></i> UI/UX
-                    </div>
+            <div class="relative mt-12 sm:mt-0">
+                <div class="absolute -left-10 top-10 h-32 w-32 rounded-full bg-fuchsia-500/25 blur-3xl"></div>
+                <div class="absolute -bottom-10 right-0 h-40 w-40 rounded-full bg-sky-500/25 blur-3xl"></div>
+                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/90 shadow-2xl shadow-slate-950/40 mx-auto max-w-[28rem]">
+                    <img src="/static/galelaloo.jpg" alt="Gale Arcenal" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
+                    <div class="absolute left-6 top-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur">Frontend Dev</div>
+                    <div class="absolute right-6 bottom-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur">UI/UX</div>
                 </div>
             </div>
         </div>
@@ -1426,7 +1413,7 @@
                         src="/static/images/landing.png" 
                         alt="DPWH Web-Portal" 
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'"
+                        onerror="this.onerror=null; this.src='static/galelaloo.jpg'"
                     >
                     <div class="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
                         Frontend
@@ -1641,21 +1628,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="fade-in-element">
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1 dark:text-darkText">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your name">
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your name">
                             </div>
                             <div class="fade-in-element" style="animation-delay: 0.1s;">
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1 dark:text-darkText">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your email">
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your email">
                             </div>
                         </div>
                         <div class="fade-in-element" style="animation-delay: 0.2s;">
                             <label for="subject" class="block text-sm font-medium text-gray-700 mb-1 dark:text-darkText">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Subject">
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Subject">
                         </div>
                         <div class="fade-in-element" style="animation-delay: 0.3s;">
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1 dark:text-darkText">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your message"></textarea>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 dark:bg-darkCard dark:border-gray-700 dark:text-darkText" placeholder="Your message"></textarea>
                         </div>
+                        <div id="contact-feedback" class="text-sm text-center text-gray-600 dark:text-gray-300 mb-4 hidden"></div>
                         <button type="submit" id="submit-btn" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors duration-200 shadow-lg hover-lift fade-in-element" style="animation-delay: 0.4s;">
                             Send Message
                             <i class="fas fa-paper-plane ml-2"></i>
@@ -2334,36 +2322,65 @@ this.currentProjectImages = projectImages[projectTitle] || [
         // Contact Form Handler
         const contactForm = document.querySelector('#contact form');
         if (contactForm) {
+            const feedback = document.getElementById('contact-feedback');
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
                 const submitBtn = document.getElementById('submit-btn');
                 const originalText = submitBtn.innerHTML;
+                feedback.classList.add('hidden');
+                feedback.textContent = '';
                 
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    subject: document.getElementById('subject').value.trim(),
+                    message: document.getElementById('message').value.trim()
+                };
+
+                if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                    feedback.textContent = 'Please fill in all fields before sending your message.';
+                    feedback.classList.remove('hidden');
+                    feedback.classList.remove('text-green-500');
+                    feedback.classList.add('text-red-500');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
                 try {
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
                     
-                    const formData = {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        subject: document.getElementById('subject').value,
-                        message: document.getElementById('message').value
-                    };
-                    
-                    // Simulate API call (replace with actual endpoint)
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    alert('Message sent successfully! I will get back to you soon.');
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Failed to send message.');
+                    }
+
+                    feedback.textContent = data.message || 'Message sent successfully!';
+                    feedback.classList.remove('hidden');
+                    feedback.classList.remove('text-red-500');
+                    feedback.classList.add('text-green-500');
                     contactForm.reset();
                     submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+
                     setTimeout(() => {
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
+                        feedback.classList.add('hidden');
                     }, 3000);
-                    
                 } catch (error) {
-                    alert('Error sending message: ' + error.message);
+                    feedback.textContent = error.message;
+                    feedback.classList.remove('hidden');
+                    feedback.classList.remove('text-green-500');
+                    feedback.classList.add('text-red-500');
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 }
