@@ -875,11 +875,16 @@
                 max-width: 100%;
                 margin-left: auto;
                 margin-right: 0;
+                justify-self: end;
             }
 
             .hero-card .relative {
                 margin-left: auto;
                 margin-right: 0;
+            }
+
+            .hero-card > .relative {
+                max-width: 20rem;
             }
         }
         
@@ -1133,7 +1138,7 @@
             <a href="#home" class="flex items-center gap-3">
                 <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-lg font-semibold text-white shadow-lg shadow-fuchsia-500/25">G</span>
                 <div>
-                    <p class="text-base font-semibold text-white">Gale Arcenal</p>
+                    <p class="text-base font-semibold text-white"></p>
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Design & Development</p>
                 </div>
             </a>
@@ -1168,7 +1173,7 @@
 <section id="home" class="hero-section relative overflow-hidden bg-[radial-gradient(circle_at_top_right,_rgba(236,72,153,0.22),transparent_18%),radial-gradient(circle_at_bottom_left,_rgba(59,130,246,0.14),transparent_20%),#020617] py-24 lg:py-32">
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.40),rgba(15,23,42,0.90))] pointer-events-none"></div>
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid items-center gap-12 lg:grid-cols-[1.3fr_0.9fr]">
+        <div class="grid items-center gap-12 sm:grid-cols-[1.3fr_0.9fr] lg:grid-cols-[1.3fr_0.9fr]">
             <div class="space-y-8 text-center sm:text-left">
                 <div class="inline-flex items-center justify-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm text-slate-200 backdrop-blur-lg ring-1 ring-white/10 mx-auto sm:mx-0">
                     <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-500 text-white">★</span>
@@ -1198,10 +1203,10 @@
                 </div>
             </div>
             <div class="hero-card relative mt-12 sm:mt-0 justify-self-end">
-                <div class="absolute -left-10 top-10 h-32 w-32 rounded-full bg-fuchsia-500/25 blur-3xl"></div>
-                <div class="absolute -bottom-10 right-0 h-40 w-40 rounded-full bg-sky-500/25 blur-3xl"></div>
-                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/90 shadow-2xl shadow-slate-950/40 mx-auto sm:mx-0 max-w-[28rem]">
-                    <img src="/static/galelaloo.jpg" alt="Gale Arcenal" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
+                <div class="absolute -left-10 top-10 h-28 w-28 rounded-full bg-fuchsia-500/25 blur-3xl"></div>
+                <div class="absolute -bottom-10 right-0 h-32 w-32 rounded-full bg-sky-500/25 blur-3xl"></div>
+                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/90 shadow-2xl shadow-slate-950/40 mx-auto sm:mx-0 max-w-[22rem] sm:max-w-[24rem]">
+                    <img src="/static/galelaloo.jpg" alt="" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
                     <div class="absolute left-6 top-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur">Frontend Dev</div>
                     <div class="absolute right-6 bottom-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur">UI/UX</div>
                 </div>
