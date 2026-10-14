@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Therese Arcenal | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1130,16 +1133,408 @@
             animation: slideInFade 0.5s ease forwards;
         }
     </style>
+    <style>
+        :root {
+            --portfolio-bg: #f4f6f4;
+            --portfolio-surface: #ffffff;
+            --portfolio-surface-muted: #edf1ef;
+            --portfolio-ink: #192522;
+            --portfolio-muted: #5d6b66;
+            --portfolio-line: #dce4df;
+            --portfolio-accent: #d85d63;
+            --portfolio-accent-strong: #b74455;
+            --portfolio-green: #4f897d;
+            color-scheme: light;
+        }
+
+        :root.dark {
+            --portfolio-bg: #101918;
+            --portfolio-surface: #182321;
+            --portfolio-surface-muted: #1d2b28;
+            --portfolio-ink: #eef4f0;
+            --portfolio-muted: #aab9b2;
+            --portfolio-line: #30403b;
+            --portfolio-accent: #f17c7d;
+            --portfolio-accent-strong: #ff9a91;
+            --portfolio-green: #78b4a3;
+            color-scheme: dark;
+        }
+
+        html {
+            scroll-padding-top: 88px;
+        }
+
+        body,
+        body.font-sans {
+            background: var(--portfolio-bg) !important;
+            color: var(--portfolio-ink) !important;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, h4, nav, button, .gradient-text {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        #navbar {
+            background: color-mix(in srgb, var(--portfolio-surface) 92%, transparent) !important;
+            border-color: var(--portfolio-line) !important;
+            box-shadow: 0 8px 30px rgba(13, 26, 22, 0.08) !important;
+            backdrop-filter: blur(18px);
+        }
+
+        #navbar > div {
+            min-height: 76px;
+        }
+
+        #navbar > div > a > span {
+            border-radius: 10px !important;
+            background: var(--portfolio-accent) !important;
+            box-shadow: none !important;
+        }
+
+        #navbar > div > a > div > p:first-child {
+            color: var(--portfolio-ink);
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+
+        #navbar a:not(:first-child),
+        #navbar button {
+            transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+        }
+
+        #navbar .text-slate-300,
+        #navbar .text-slate-200,
+        #navbar .text-slate-400 {
+            color: var(--portfolio-muted) !important;
+        }
+
+        #navbar a:hover {
+            color: var(--portfolio-accent) !important;
+        }
+
+        #mobile-menu {
+            background: var(--portfolio-surface) !important;
+            border-color: var(--portfolio-line) !important;
+        }
+
+        #home {
+            min-height: 680px;
+            padding-top: 92px;
+            padding-bottom: 92px;
+            background: #142321 !important;
+        }
+
+        #home > .absolute {
+            background: linear-gradient(115deg, rgba(18, 35, 31, 0.14), rgba(18, 35, 31, 0.75)) !important;
+        }
+
+        #home .hero-card > .absolute {
+            display: none;
+        }
+
+        #home .hero-card > div.relative {
+            max-width: 25rem;
+            border-radius: 14px !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            background: #20312d !important;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28) !important;
+        }
+
+        #home .hero-card img {
+            max-height: 560px;
+            object-position: center 35%;
+        }
+
+        #home h1 {
+            max-width: 12ch;
+            font-size: 3.65rem;
+            line-height: 1.08;
+            font-weight: 800;
+            color: #f7faf8;
+        }
+
+        #home .hero-eyebrow {
+            color: #f39a91;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        #home .hero-description {
+            max-width: 39rem;
+            color: #c5d1cb;
+            font-size: 1.08rem;
+        }
+
+        #home .hero-actions a {
+            min-height: 48px;
+            border-radius: 8px !important;
+        }
+
+        #home .stats-grid {
+            max-width: 40rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #home .stats-grid > div {
+            min-height: 112px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px !important;
+            background: rgba(255, 255, 255, 0.06) !important;
+            padding: 1.1rem 1.25rem;
+            box-shadow: none !important;
+        }
+
+        #home .stats-grid > div > p:first-child {
+            color: #afc0b7;
+            font-size: 0.67rem;
+            letter-spacing: 0.12em;
+        }
+
+        #home .stats-grid > div > p:last-child {
+            margin-top: 0.55rem;
+            color: #f7faf8;
+            font-size: 1.28rem;
+            font-weight: 700;
+        }
+
+        #about, #projects, #contact {
+            background: var(--portfolio-bg) !important;
+        }
+
+        #skills {
+            background: var(--portfolio-surface-muted) !important;
+        }
+
+        #about, #skills, #projects, #contact {
+            padding-top: 88px;
+            padding-bottom: 88px;
+        }
+
+        #about h2, #skills h2, #projects h2, #contact h2 {
+            color: var(--portfolio-ink) !important;
+            font-size: 2.15rem;
+            font-weight: 800;
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(110deg, var(--portfolio-accent), var(--portfolio-green));
+        }
+
+        .text-primary {
+            color: var(--portfolio-accent) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--portfolio-accent) !important;
+        }
+
+        #projects .bg-primary.bg-opacity-10.text-primary.px-3.py-1 {
+            border: 1px solid color-mix(in srgb, var(--portfolio-accent) 24%, var(--portfolio-line));
+            border-radius: 6px !important;
+            background-color: color-mix(in srgb, var(--portfolio-accent) 12%, var(--portfolio-surface)) !important;
+            color: var(--portfolio-accent-strong) !important;
+            font-weight: 600;
+        }
+
+        .bg-secondary {
+            background-color: var(--portfolio-accent-strong) !important;
+        }
+
+        .text-dark,
+        .dark .text-dark,
+        .dark .dark\:text-darkText {
+            color: var(--portfolio-ink) !important;
+        }
+
+        .text-gray-600, .text-gray-700, .text-gray-400, .text-slate-300, .text-slate-400 {
+            color: var(--portfolio-muted) !important;
+        }
+
+        #home .text-slate-300,
+        #home .text-slate-400 {
+            color: #c5d1cb !important;
+        }
+
+        #about .bg-light,
+        #skills .skill-item,
+        #projects .bg-light {
+            border: 1px solid var(--portfolio-line);
+            border-radius: 8px !important;
+            background: var(--portfolio-surface) !important;
+            box-shadow: 0 10px 28px rgba(20, 38, 31, 0.045);
+        }
+
+        #skills .grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: 1.1rem;
+        }
+
+        #skills .skill-item {
+            padding: 1.5rem;
+        }
+
+        #skills .skill-item h3 {
+            font-size: 1.03rem;
+        }
+
+        #projects .grid {
+            gap: 1.35rem;
+        }
+
+        #projects .bg-light {
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(20, 38, 31, 0.055);
+        }
+
+        #projects .bg-light:hover,
+        #skills .skill-item:hover,
+        #about .bg-light:hover {
+            border-color: color-mix(in srgb, var(--portfolio-accent) 42%, var(--portfolio-line));
+            box-shadow: 0 18px 40px rgba(20, 38, 31, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .project-image-clickable::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            background: var(--portfolio-accent);
+        }
+
+        #contact input, #contact textarea {
+            border-color: var(--portfolio-line);
+            border-radius: 7px !important;
+            background: var(--portfolio-surface) !important;
+            color: var(--portfolio-ink) !important;
+        }
+
+        #contact input:focus, #contact textarea:focus {
+            border-color: var(--portfolio-accent) !important;
+            outline: 3px solid color-mix(in srgb, var(--portfolio-accent) 18%, transparent);
+            box-shadow: none !important;
+        }
+
+        #contact button[type="submit"],
+        #view-all-projects-btn {
+            border-radius: 7px !important;
+        }
+
+        footer {
+            background: #142321 !important;
+        }
+
+        #back-to-top {
+            right: 24px;
+            bottom: 24px;
+            border-radius: 8px !important;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--portfolio-accent);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 1023px) {
+            #navbar > div > a > div > p:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #home {
+                min-height: 0;
+                padding-top: 64px;
+                padding-bottom: 68px;
+            }
+
+            #home .grid.items-center {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 2.5rem;
+            }
+
+            #home .hero-copy {
+                text-align: left;
+            }
+
+            #home h1 {
+                max-width: 14ch;
+                font-size: 2.75rem;
+            }
+
+            #home .hero-card {
+                justify-self: center;
+                margin-top: 0;
+            }
+
+            #home .hero-card > div.relative {
+                max-width: 21rem;
+            }
+
+            #about, #skills, #projects, #contact {
+                padding-top: 68px;
+                padding-bottom: 68px;
+            }
+
+            #about .grid,
+            #contact > div > .grid {
+                gap: 2.25rem;
+            }
+
+            #projects .grid {
+                gap: 1rem;
+            }
+
+            .custom-chatbot-container {
+                right: 14px;
+                bottom: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #home h1 {
+                font-size: 2.25rem;
+            }
+
+            #home .stats-grid {
+                gap: 0.65rem;
+            }
+
+            #home .stats-grid > div {
+                padding: 0.9rem;
+            }
+
+            #home .stats-grid > div > p:last-child {
+                font-size: 1rem;
+            }
+
+            #about h2, #skills h2, #projects h2, #contact h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body class="font-sans antialiased bg-slate-950 text-slate-100">
     <!-- Navigation -->
     <nav id="navbar" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur-xl shadow-2xl shadow-black/30">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="#home" class="flex items-center gap-3">
-                <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-lg font-semibold text-white shadow-lg shadow-fuchsia-500/25">G</span>
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-sm font-extrabold text-white shadow-lg shadow-fuchsia-500/25">TA</span>
                 <div>
-                    <p class="text-base font-semibold text-white"></p>
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Design • Development • Virtual Assistance</p>
+                    <p class="text-base font-semibold text-white">Therese Arcenal</p>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Web Developer · UI/UX Designer</p>
                 </div>
             </a>
             <div class="hidden items-center gap-8 md:flex">
@@ -1175,10 +1570,10 @@
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 sm:grid-cols-[1.3fr_0.9fr] lg:grid-cols-[1.3fr_0.9fr]">
             <div class="space-y-8 text-center sm:text-left">
-               w
+                <p class="hero-eyebrow">Therese Andrei C. Arcenal</p>
                 <div class="space-y-6">
-                    <h1 class="max-w-3xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">Creating elegant, high-impact digital experiences for modern brands.</h1>
-                    <p class="max-w-2xl text-lg leading-8 text-slate-300">I design and build polished websites, interfaces, digital content, and virtual assistant experiences that help businesses stand out, engage users, and grow with confidence.</p>
+                    <h1>Web developer &amp; UI/UX designer.</h1>
+                    <p class="hero-description">I build responsive websites and intuitive interfaces, pairing thoughtful user experience with dependable implementation. I also bring organized virtual assistance and digital content support to busy teams.</p>
                 </div>
                 <div class="hero-actions flex flex-wrap justify-center gap-4 sm:justify-start">
                     <a href="#projects" class="inline-flex w-full max-w-[11rem] items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-950 shadow-2xl shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-100 sm:w-auto">Explore Work</a>
@@ -1186,12 +1581,12 @@
                 </div>
                 <div class="stats-grid grid gap-4 sm:grid-cols-3 justify-items-center sm:justify-items-stretch">
                     <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
-                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Projects</p>
-                        <p class="mt-4 text-3xl font-semibold text-white">5+</p>
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Core focus</p>
+                        <p class="mt-4 text-3xl font-semibold text-white">Web + UI/UX</p>
                     </div>
                     <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
-                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Experience</p>
-                        <p class="mt-4 text-3xl font-semibold text-white">2+ yrs</p>
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Also offering</p>
+                        <p class="mt-4 text-3xl font-semibold text-white">Virtual support</p>
                     </div>
                    
                 </div>
@@ -1200,7 +1595,7 @@
                 <div class="absolute -left-10 top-10 h-28 w-28 rounded-full bg-fuchsia-500/25 blur-3xl"></div>
                 <div class="absolute -bottom-10 right-0 h-32 w-32 rounded-full bg-sky-500/25 blur-3xl"></div>
                 <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/90 shadow-2xl shadow-slate-950/40 mx-auto sm:mx-0 max-w-[22rem] sm:max-w-[24rem]">
-                    <img src="/static/galelaloo.jpg" alt="" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
+                    <img src="/static/galelaloo.jpg" alt="Portrait of Therese Andrei C. Arcenal" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
                     <div class="absolute left-6 top-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur"></div>
                     <div class="absolute right-6 bottom-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur"></div>
                 </div>
@@ -1221,24 +1616,28 @@
             <div>
                 <h3 class="text-2xl font-bold mb-4 text-dark dark:text-darkText fade-in-element">Hello! I'm <span class="gradient-text">Therese Andrei C. Arcenal</span>.</h3>
                 <p class="text-gray-600 mb-4 leading-relaxed dark:text-gray-400 fade-in-element">
-                    With a passion for cutting-edge technology and a commitment to excellence, I specialize in crafting bespoke IT solutions that drive success and efficiency for my clients globally.
+                    I’m a web developer and UI/UX designer who turns complex requirements into clear, welcoming digital experiences. My work spans responsive frontends, web applications, user research, and interface design.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400 fade-in-element">
-                    With over <span class="font-bold text-primary">3+ years of specialist experience</span>, I bring deep expertise in UI/UX design, full-stack development, and strategic consulting. My goal is to transform complex challenges into scalable, reliable, and innovative digital experiences.
+                    With over <span class="font-bold text-primary">3 years of experience</span>, I take projects from discovery and wireframes through implementation and iteration, with a focus on accessible, usable products that serve real business goals.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400 fade-in-element">
-                    I also support clients as a dependable virtual assistant and content editor, with hands-on experience in video editing, Canva, ClickUp, and Microsoft Office.
+                    I also provide dependable virtual assistance and content support, including video editing, Canva, ClickUp, and Microsoft Office.
                 </p>
                 
                 <!-- Stats with better styling -->
                 <div class="flex space-x-6 mt-8">
                     <div class="text-center fade-in-element">
-                        <div class="text-4xl font-bold text-primary mb-1">3+</div>
-                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Projects</div>
+                        <div class="text-2xl font-bold text-primary mb-1">UI/UX</div>
+                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Design</div>
                     </div>
                     <div class="text-center fade-in-element" style="animation-delay: 0.1s;">
-                        <div class="text-4xl font-bold text-primary mb-1">3+</div>
-                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Years Exp.</div>
+                        <div class="text-2xl font-bold text-primary mb-1">Web</div>
+                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Development</div>
+                    </div>
+                    <div class="text-center fade-in-element">
+                        <div class="text-2xl font-bold text-primary mb-1">VA</div>
+                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Support</div>
                     </div>
                 </div>
             </div>
@@ -1794,8 +2193,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in-element">
-                    <h3 class="text-xl font-bold mb-4"><span class="gradient-text"></span></h3>
-                    <p class="text-gray-400">Creating digital experiences that inspire and engage users through thoughtful design.</p>
+                    <h3 class="text-xl font-bold mb-4"><span class="gradient-text">Therese Arcenal</span></h3>
+                    <p class="text-gray-400">Web development, thoughtful UI/UX, and reliable digital support.</p>
                 </div>
                 <div class="fade-in-element" style="animation-delay: 0.1s;">
                     <h4 class="font-bold mb-4">Quick Links</h4>
