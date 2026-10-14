@@ -1559,11 +1559,18 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element">
                     <div class="h-48 overflow-hidden relative project-image-clickable">
-                        <img
-                            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80"
-                            alt="Outdoor tennis court for Picolandia court reservations"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
-                        >
+                        <div class="grid grid-cols-2 h-full">
+                            <img
+                                src="/static/images/pickle1.png"
+                                alt="Picolandia website screenshot 1"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
+                            >
+                            <img
+                                src="/static/images/pickle2.png"
+                                alt="Picolandia website screenshot 2"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
+                            >
+                        </div>
                         <div class="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Freelance</div>
                     </div>
                     <div class="p-6">
@@ -1585,7 +1592,7 @@
                 <div class="bg-light rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover-lift group dark:bg-darkCard fade-in-element" style="animation-delay: 0.1s;">
                     <div class="h-48 overflow-hidden relative project-image-clickable">
                         <img
-                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+                            src="/static/images/basha.png"
                             alt="Beachfront view representing Basha Beach House Resort"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 optimize-performance"
                         >
@@ -2235,7 +2242,7 @@
 
            openGallery(projectCard) {
     // Get project title for image grouping
-    const projectTitle = projectCard.querySelector('h3')?.textContent || 'Project';
+    const projectTitle = projectCard.querySelector('h3, h4')?.textContent || 'Project';
     
     // Define images for each project (update this section)
     const projectImages = {
@@ -2259,10 +2266,12 @@
             { src: '/static/images/Subdivision4.jpg', alt: 'Map View' }
         ],
         'Picolandia': [
-            { src: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80', alt: 'Picolandia court booking' }
+            { src: '/static/images/pickle1.png', alt: 'Picolandia website screenshot 1' },
+            { src: '/static/images/pickle2.png', alt: 'Picolandia website screenshot 2' }
         ],
         'Basha Beach House Resort': [
-            { src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', alt: 'Basha Beach House Resort' }
+            { src: '/static/images/basha.png', alt: 'Basha Beach House Resort' },
+            { src: '/static/images/basha2.png', alt: 'Basha Beach House Resort image 2' }
         ],
         'SIT-IN Platform': [
             { src: '/static/images/sitin1.png', alt: 'SIT-IN Dashboard' },
