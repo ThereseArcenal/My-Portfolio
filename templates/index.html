@@ -165,32 +165,28 @@
                 },
                 body: JSON.stringify({
                     question: message,
-                    history: chatHistory,
-                    overrideConfig: {}
-                })
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Next.js</span>
             });
             
             const data = await response.json();
             typing.remove();
             
-            if (!response.ok) {
-                throw new Error(data.error || 'Failed to get response');
-            }
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
             
             // Add bot response
-            const botMsg = document.createElement('div');
-            botMsg.className = 'custom-chatbot-message bot-message';
-            botMsg.innerHTML = `
-                <div class="custom-chatbot-avatar">
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">React</span>
                     <i class="fas fa-robot"></i>
                 </div>
-                <div class="custom-chatbot-bubble">
+                                <span role="img" aria-label="Email">✉️</span>
                     <p>${data.text || 'Sorry, I encountered an error. Please try again.'}</p>
                     <span class="custom-chatbot-time">${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</span>
-                </div>
+                                <span role="img" aria-label="Phone">📞</span>
             `;
             body.appendChild(botMsg);
-            smoothScrollToBottom(body);
+                                <span role="img" aria-label="Location">📍</span>
             
             chatHistory.push({
                 role: 'user',
@@ -1919,9 +1915,9 @@
                         A user-friendly web-based donation platform built to help charities raise funds efficiently, featuring smooth donation flows and a clean, accessible interface.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UX Research</span>
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Next.js</span>
                     </div>
                 </div>
             </div>
@@ -1942,9 +1938,8 @@
                         Developed a web-based platform for managing subdivision properties, enabling organized listings, resident information tracking, and smoother coordination for developers and admins.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">UI Design</span>
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">User Flows</span>
-                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Dashboard Design</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
                     </div>
                 </div>
             </div>
@@ -1977,10 +1972,9 @@
                         <p class="text-sm font-medium text-primary mb-3">Full-Stack Developer &amp; UI/UX Designer</p>
                         <p class="text-gray-600 mb-4 dark:text-gray-400">Developed a responsive court booking and reservation system where customers can explore Courts A, B, and C, manage bookings and memberships, and follow GCash payment instructions with proof-of-payment submission.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Supabase</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">HTML/CSS</span>
-                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Responsive Design</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Vercel</span>
                         </div>
                         <a href="https://picklelicaosports.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                             Visit Live Website <i class="fas fa-arrow-up-right-from-square ml-2" aria-hidden="true"></i>
@@ -2113,7 +2107,7 @@
                     <div class="space-y-6">
                         <div class="flex items-start fade-in-element">
                             <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-envelope"></i>
+                                <span role="img" aria-label="Email">✉️</span>
                             </div>
                             <div>
                                 <h4 class="font-bold text-dark mb-1 dark:text-darkText">Email</h4>
@@ -2122,7 +2116,7 @@
                         </div>
                         <div class="flex items-start fade-in-element" style="animation-delay: 0.1s;">
                             <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-phone-alt"></i>
+                                <span role="img" aria-label="Phone">📞</span>
                             </div>
                             <div>
                                 <h4 class="font-bold text-dark mb-1 dark:text-darkText">Phone</h4>
@@ -2131,7 +2125,7 @@
                         </div>
                         <div class="flex items-start fade-in-element" style="animation-delay: 0.2s;">
                             <div class="bg-primary bg-opacity-10 text-primary rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <span role="img" aria-label="Location">📍</span>
                             </div>
                             <div>
                                 <h4 class="font-bold text-dark mb-1 dark:text-darkText">Location</h4>
