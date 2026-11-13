@@ -613,13 +613,13 @@
         body {
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
-            background-color: #020617 !important;
-            color: #f8fafc !important;
+            background-color: #ffffff !important;
+            color: #0f172a !important;
         }
         
         .dark body {
-            background-color: #111827 !important;
-            color: #f8fafc !important;
+            background-color: #ffffff !important;
+            color: #0f172a !important;
         }
         
         .gradient-text {
@@ -1133,29 +1133,16 @@
     </style>
     <style>
         :root {
-            --portfolio-bg: #f4f6f4;
+            --portfolio-bg: #ffffff;
             --portfolio-surface: #ffffff;
-            --portfolio-surface-muted: #edf1ef;
-            --portfolio-ink: #192522;
-            --portfolio-muted: #5d6b66;
-            --portfolio-line: #dce4df;
+            --portfolio-surface-muted: #ffffff;
+            --portfolio-ink: #000000;
+            --portfolio-muted: #111111;
+            --portfolio-line: #e5e7eb;
             --portfolio-accent: #d85d63;
             --portfolio-accent-strong: #b74455;
-            --portfolio-green: #4f897d;
+            --portfolio-green: #d85d63;
             color-scheme: light;
-        }
-
-        :root.dark {
-            --portfolio-bg: #101918;
-            --portfolio-surface: #182321;
-            --portfolio-surface-muted: #1d2b28;
-            --portfolio-ink: #eef4f0;
-            --portfolio-muted: #aab9b2;
-            --portfolio-line: #30403b;
-            --portfolio-accent: #f17c7d;
-            --portfolio-accent-strong: #ff9a91;
-            --portfolio-green: #78b4a3;
-            color-scheme: dark;
         }
 
         html {
@@ -1175,7 +1162,7 @@
         }
 
         #navbar {
-            background: color-mix(in srgb, var(--portfolio-surface) 92%, transparent) !important;
+            background: #ffffff !important;
             border-color: var(--portfolio-line) !important;
             box-shadow: 0 8px 30px rgba(13, 26, 22, 0.08) !important;
             backdrop-filter: blur(18px);
@@ -1221,11 +1208,11 @@
             min-height: 680px;
             padding-top: 92px;
             padding-bottom: 92px;
-            background: #142321 !important;
+            background: #ffffff !important;
         }
 
         #home > .absolute {
-            background: linear-gradient(115deg, rgba(18, 35, 31, 0.14), rgba(18, 35, 31, 0.75)) !important;
+            background: linear-gradient(115deg, rgba(255, 255, 255, 0.12), #ffffff) !important;
         }
 
         #home .hero-card > .absolute {
@@ -1235,9 +1222,9 @@
         #home .hero-card > div.relative {
             max-width: 25rem;
             border-radius: 14px !important;
-            border-color: rgba(255, 255, 255, 0.2) !important;
-            background: #20312d !important;
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28) !important;
+            border-color: rgba(148, 163, 184, 0.18) !important;
+            background: #ffffff !important;
+            box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08) !important;
         }
 
         #home .hero-card img {
@@ -1250,11 +1237,11 @@
             font-size: 3.65rem;
             line-height: 1.08;
             font-weight: 800;
-            color: #f7faf8;
+            color: #000000;
         }
 
         #home .hero-eyebrow {
-            color: #f39a91;
+            color: #000000;
             font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 0.14em;
@@ -1263,7 +1250,7 @@
 
         #home .hero-description {
             max-width: 39rem;
-            color: #c5d1cb;
+            color: #111111;
             font-size: 1.08rem;
         }
 
@@ -1279,32 +1266,28 @@
 
         #home .stats-grid > div {
             min-height: 112px;
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(15, 23, 42, 0.08);
             border-radius: 8px !important;
-            background: rgba(255, 255, 255, 0.06) !important;
+            background: #ffffff !important;
             padding: 1.1rem 1.25rem;
-            box-shadow: none !important;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04) !important;
         }
 
         #home .stats-grid > div > p:first-child {
-            color: #afc0b7;
+            color: #111111;
             font-size: 0.67rem;
             letter-spacing: 0.12em;
         }
 
         #home .stats-grid > div > p:last-child {
             margin-top: 0.55rem;
-            color: #f7faf8;
+            color: #000000;
             font-size: 1.28rem;
             font-weight: 700;
         }
 
-        #about, #projects, #contact {
-            background: var(--portfolio-bg) !important;
-        }
-
-        #skills {
-            background: var(--portfolio-surface-muted) !important;
+        #about, #skills, #projects, #contact {
+            background: #ffffff !important;
         }
 
         #about, #skills, #projects, #contact {
@@ -1320,6 +1303,12 @@
 
         .gradient-text {
             background-image: linear-gradient(110deg, var(--portfolio-accent), var(--portfolio-green));
+        }
+
+        .name-text {
+            background: none;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000;
         }
 
         .text-primary {
@@ -1348,13 +1337,15 @@
             color: var(--portfolio-ink) !important;
         }
 
-        .text-gray-600, .text-gray-700, .text-gray-400, .text-slate-300, .text-slate-400 {
+        .text-gray-600, .text-gray-700, .text-gray-400,
+        .text-slate-300, .text-slate-400, .text-slate-500,
+        .text-slate-600, .text-slate-700, .text-slate-800, .text-slate-900 {
             color: var(--portfolio-muted) !important;
         }
 
         #home .text-slate-300,
         #home .text-slate-400 {
-            color: #c5d1cb !important;
+            color: var(--portfolio-muted) !important;
         }
 
         #about .bg-light,
@@ -1422,7 +1413,13 @@
         }
 
         footer {
-            background: #142321 !important;
+            background: #ffffff !important;
+            color: var(--portfolio-ink) !important;
+            border-top: 1px solid var(--portfolio-line);
+        }
+
+        footer .text-white {
+            color: var(--portfolio-ink) !important;
         }
 
         #back-to-top {
@@ -1524,78 +1521,70 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased bg-slate-950 text-slate-100">
+<body class="font-sans antialiased bg-white text-slate-800">
     <!-- Navigation -->
-    <nav id="navbar" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur-xl shadow-2xl shadow-black/30">
+    <nav id="navbar" class="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="#home" class="flex items-center gap-3">
-                <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-sm font-extrabold text-white shadow-lg shadow-fuchsia-500/25">TA</span>
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-gradient-to-br from-[#f472b6] to-[#d946ef] text-sm font-extrabold text-white shadow-lg shadow-pink-200/60">TA</span>
                 <div>
-                    <p class="text-base font-semibold text-white">Therese Arcenal</p>
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Web Developer · UI/UX Designer</p>
+                    <p class="text-base font-semibold text-slate-900">Therese Arcenal</p>
+                    <p class="text-[10px] uppercase tracking-[0.24em] text-slate-500">Web Developer · UI/UX Designer</p>
                 </div>
             </a>
             <div class="hidden items-center gap-8 md:flex">
-                <a href="#home" class="text-sm font-medium text-slate-300 transition hover:text-white">Home</a>
-                <a href="#about" class="text-sm font-medium text-slate-300 transition hover:text-white">About</a>
-                <a href="#skills" class="text-sm font-medium text-slate-300 transition hover:text-white">Skills</a>
-                <a href="#projects" class="text-sm font-medium text-slate-300 transition hover:text-white">Projects</a>
-                <a href="#contact" class="text-sm font-medium text-slate-300 transition hover:text-white">Contact</a>
+                <a href="#home" class="text-sm font-medium text-slate-700 transition hover:text-[#d946ef]">Home</a>
+                <a href="#about" class="text-sm font-medium text-slate-700 transition hover:text-[#d946ef]">About</a>
+                <a href="#skills" class="text-sm font-medium text-slate-700 transition hover:text-[#d946ef]">Skills</a>
+                <a href="#projects" class="text-sm font-medium text-slate-700 transition hover:text-[#d946ef]">Projects</a>
+                <a href="#contact" class="text-sm font-medium text-slate-700 transition hover:text-[#d946ef]">Contact</a>
             </div>
-            <div class="hidden items-center gap-4 md:flex">
-                <label class="dark-mode-switch mb-0">
-                    <input type="checkbox" id="dark-mode-toggle">
-                    <span class="dark-mode-slider"></span>
-                </label>
-                <span class="text-sm text-slate-400">Dark</span>
-            </div>
-            <button id="mobile-menu-button" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-4 py-2 text-sm text-white transition hover:border-white/20 md:hidden">
+            <button id="mobile-menu-button" class="inline-flex items-center gap-2 rounded-full border border-[#e9e2d9] bg-white px-4 py-2 text-sm text-slate-700 transition hover:border-[#dccdb7] md:hidden">
                 <i class="fas fa-bars"></i> Menu
             </button>
         </div>
-        <div id="mobile-menu" class="hidden border-t border-white/10 bg-slate-950/95 px-4 pb-4 md:hidden">
-            <a href="#home" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Home</a>
-            <a href="#about" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">About</a>
-            <a href="#skills" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Skills</a>
-            <a href="#projects" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Projects</a>
-            <a href="#contact" class="block rounded-3xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">Contact</a>
+        <div id="mobile-menu" class="hidden border-t border-gray-200 bg-white px-4 pb-4 md:hidden">
+            <a href="#home" class="block rounded-3xl px-4 py-3 text-sm text-slate-700 transition hover:bg-white">Home</a>
+            <a href="#about" class="block rounded-3xl px-4 py-3 text-sm text-slate-700 transition hover:bg-white">About</a>
+            <a href="#skills" class="block rounded-3xl px-4 py-3 text-sm text-slate-700 transition hover:bg-white">Skills</a>
+            <a href="#projects" class="block rounded-3xl px-4 py-3 text-sm text-slate-700 transition hover:bg-white">Projects</a>
+            <a href="#contact" class="block rounded-3xl px-4 py-3 text-sm text-slate-700 transition hover:bg-white">Contact</a>
         </div>
     </nav>
 
  <!-- Hero Section -->
-<section id="home" class="hero-section relative overflow-hidden bg-[radial-gradient(circle_at_top_right,_rgba(236,72,153,0.22),transparent_18%),radial-gradient(circle_at_bottom_left,_rgba(59,130,246,0.14),transparent_20%),#020617] py-24 lg:py-32">
-    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.40),rgba(15,23,42,0.90))] pointer-events-none"></div>
+<section id="home" class="hero-section relative overflow-hidden bg-white py-24 lg:py-32">
+    <div class="absolute inset-0 bg-white/80 pointer-events-none"></div>
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 sm:grid-cols-[1.3fr_0.9fr] lg:grid-cols-[1.3fr_0.9fr]">
             <div class="space-y-8 text-center sm:text-left">
                 <p class="hero-eyebrow">Therese Andrei C. Arcenal</p>
                 <div class="space-y-6">
                     <h1>Web developer &amp; UI/UX designer.</h1>
-                    <p class="hero-description">I build responsive websites and intuitive interfaces, pairing thoughtful user experience with dependable implementation. I also bring organized virtual assistance and digital content support to busy teams.</p>
+                    <p class="hero-description">I build responsive websites and intuitive interfaces, pairing thoughtful user experience with dependable implementation. I also bring organized digital content support and creative editing to busy teams.</p>
                 </div>
                 <div class="hero-actions flex flex-wrap justify-center gap-4 sm:justify-start">
-                    <a href="#projects" class="inline-flex w-full max-w-[11rem] items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-950 shadow-2xl shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-100 sm:w-auto">Explore Work</a>
-                    <a href="#contact" class="inline-flex w-full max-w-[11rem] items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10 sm:w-auto">Start a Project</a>
+                    <a href="#projects" class="inline-flex w-full max-w-[11rem] items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-slate-700 sm:w-auto">Explore Work</a>
+                    <a href="#contact" class="inline-flex w-full max-w-[11rem] items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-300 hover:bg-slate-100 sm:w-auto">Start a Project</a>
                 </div>
                 <div class="stats-grid grid gap-4 sm:grid-cols-3 justify-items-center sm:justify-items-stretch">
-                    <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
-                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Core focus</p>
-                        <p class="mt-4 text-3xl font-semibold text-white">Web + UI/UX</p>
+                    <div class="rounded-[1.75rem] border border-[#ece7df] bg-white p-6 shadow-lg shadow-[#efe7dc]/80 backdrop-blur-lg">
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Core focus</p>
+                        <p class="mt-4 text-3xl font-semibold text-slate-900">Web + UI/UX</p>
                     </div>
-                    <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-lg">
-                        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Also offering</p>
-                        <p class="mt-4 text-3xl font-semibold text-white">Virtual support</p>
+                    <div class="rounded-[1.75rem] border border-[#ece7df] bg-white p-6 shadow-lg shadow-[#efe7dc]/80 backdrop-blur-lg">
+                        <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Also offering</p>
+                        <p class="mt-4 text-3xl font-semibold text-slate-900">Video Editing</p>
                     </div>
-                   
                 </div>
             </div>
             <div class="hero-card relative mt-12 sm:mt-0 justify-self-end">
                 <div class="absolute -left-10 top-10 h-28 w-28 rounded-full bg-fuchsia-500/25 blur-3xl"></div>
                 <div class="absolute -bottom-10 right-0 h-32 w-32 rounded-full bg-sky-500/25 blur-3xl"></div>
-                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/90 shadow-2xl shadow-slate-950/40 mx-auto sm:mx-0 max-w-[22rem] sm:max-w-[24rem]">
+                <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/80 mx-auto sm:mx-0 max-w-[22rem] sm:max-w-[24rem]">
                     <img src="/static/galelaloo.jpg" alt="Portrait of Therese Andrei C. Arcenal" class="aspect-[4/5] w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60'">
-                    <div class="absolute left-6 top-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur"></div>
-                    <div class="absolute right-6 bottom-6 rounded-full bg-slate-950/80 px-4 py-2 text-sm text-white shadow-lg backdrop-blur"></div>
+                    <div class="absolute left-6 top-6 rounded-full bg-white/80 px-4 py-2 text-sm text-slate-800 shadow-lg backdrop-blur"></div>
+                    <div class="absolute right-6 bottom-6 rounded-full bg-white/80 px-4 py-2 text-sm text-slate-800 shadow-lg backdrop-blur"></div>
                 </div>
             </div>
         </div>
@@ -1612,7 +1601,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <!-- Left Column - About Text -->
             <div>
-                <h3 class="text-2xl font-bold mb-4 text-dark dark:text-darkText fade-in-element">Hello! I'm <span class="gradient-text">Therese Andrei C. Arcenal</span>.</h3>
+                <h3 class="text-2xl font-bold mb-4 text-dark dark:text-darkText fade-in-element">Hello! I'm <span class="name-text">Therese Andrei C. Arcenal</span>.</h3>
                 <p class="text-gray-600 mb-4 leading-relaxed dark:text-gray-400 fade-in-element">
                     I’m a web developer and UI/UX designer who turns complex requirements into clear, welcoming digital experiences. My work spans responsive frontends, web applications, user research, and interface design.
                 </p>
@@ -1620,7 +1609,7 @@
                     With over <span class="font-bold text-primary">3 years of experience</span>, I take projects from discovery and wireframes through implementation and iteration, with a focus on accessible, usable products that serve real business goals.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400 fade-in-element">
-                    I also provide dependable virtual assistance and content support, including video editing, Canva, ClickUp, and Microsoft Office.
+                    I also provide creative video editing, content support, and digital design assistance for projects that need polished visuals and smooth execution.
                 </p>
                 
                 <!-- Stats with better styling -->
@@ -1634,8 +1623,8 @@
                         <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Development</div>
                     </div>
                     <div class="text-center fade-in-element">
-                        <div class="text-2xl font-bold text-primary mb-1">VA</div>
-                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Support</div>
+                        <div class="text-2xl font-bold text-primary mb-1">Video</div>
+                        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">Editing</div>
                     </div>
                 </div>
             </div>
@@ -1788,32 +1777,24 @@
                 </ul>
             </div>
 
-            <!-- Virtual Assistant Card -->
+            <!-- Video Editing Card -->
             <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 skill-item dark:bg-darkCard group">
                 <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-film"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-dark dark:text-darkText border-b-2 border-primary/20 pb-2">Virtual Assistance</h3>
+                <h3 class="text-xl font-bold mb-3 text-dark dark:text-darkText border-b-2 border-primary/20 pb-2">Video Editing</h3>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
                     <li class="flex items-center group-hover:translate-x-1 transition-transform duration-300">
                         <i class="fas fa-check-circle text-primary mr-2 text-sm"></i>
-                        <span>Video Editing</span>
+                        <span>CapCut</span>
                     </li>
                     <li class="flex items-center group-hover:translate-x-1 transition-transform duration-300 delay-75">
                         <i class="fas fa-check-circle text-primary mr-2 text-sm"></i>
-                        <span>Canva Content Creation</span>
+                        <span>VN Video Editor</span>
                     </li>
                     <li class="flex items-center group-hover:translate-x-1 transition-transform duration-300 delay-100">
                         <i class="fas fa-check-circle text-primary mr-2 text-sm"></i>
-                        <span>ClickUp Task Management</span>
-                    </li>
-                    <li class="flex items-center group-hover:translate-x-1 transition-transform duration-300 delay-150">
-                        <i class="fas fa-check-circle text-primary mr-2 text-sm"></i>
-                        <span>Microsoft Office Support</span>
-                    </li>
-                    <li class="flex items-center group-hover:translate-x-1 transition-transform duration-300 delay-200">
-                        <i class="fas fa-check-circle text-primary mr-2 text-sm"></i>
-                        <span>Content & Admin Support</span>
+                        <span>DaVinci Resolve</span>
                     </li>
                 </ul>
             </div>
@@ -2189,7 +2170,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="fade-in-element">
-                    <h3 class="text-xl font-bold mb-4"><span class="gradient-text">Therese Arcenal</span></h3>
+                    <h3 class="text-xl font-bold mb-4"><span class="name-text">Therese Arcenal</span></h3>
                     <p class="text-gray-400">Web development, thoughtful UI/UX, and reliable digital support.</p>
                 </div>
                 <div class="fade-in-element" style="animation-delay: 0.1s;">
@@ -2207,7 +2188,7 @@
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">UI Design</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Web Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Virtual Assistance</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200">Video Editing</a></li>
                 <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Social Media Support</a></li>
                 <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">User Research</a></li>
                     </ul>
@@ -2250,45 +2231,6 @@
 
     <!-- Enhanced JavaScript with Gallery and View All Projects -->
     <script>
-        // Dark mode functionality
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
-
-        // Check for saved theme preference or respect OS preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            if (darkModeToggle) darkModeToggle.checked = true;
-            if (darkModeToggleMobile) darkModeToggleMobile.checked = true;
-        } else {
-            document.documentElement.classList.remove('dark');
-            if (darkModeToggle) darkModeToggle.checked = false;
-            if (darkModeToggleMobile) darkModeToggleMobile.checked = false;
-        }
-
-        // Function to toggle dark mode
-        function toggleDarkMode() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-                if (darkModeToggle) darkModeToggle.checked = false;
-                if (darkModeToggleMobile) darkModeToggleMobile.checked = false;
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-                if (darkModeToggle) darkModeToggle.checked = true;
-                if (darkModeToggleMobile) darkModeToggleMobile.checked = true;
-            }
-        }
-
-        // Add event listeners to both toggles
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('change', toggleDarkMode);
-        }
-
-        if (darkModeToggleMobile) {
-            darkModeToggleMobile.addEventListener('change', toggleDarkMode);
-        }
-
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
