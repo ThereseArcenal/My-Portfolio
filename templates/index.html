@@ -650,14 +650,8 @@
         /* Smooth fade-in for sections */
         .section-hidden {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .loaded .section-hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(24px);
+            transition: opacity 700ms ease, transform 700ms ease;
         }
         
         .section-visible {
@@ -668,9 +662,8 @@
         /* Enhanced fade animations */
         .fade-in-element {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(14px);
+            transition: opacity 550ms ease, transform 550ms ease;
         }
         
         .fade-in-element.visible {
@@ -700,7 +693,13 @@
         /* Staggered animation for skills */
         .skill-item {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(18px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+
+        .skill-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Text selection color */
@@ -1517,6 +1516,13 @@
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+            }
+
+            .section-hidden,
+            .fade-in-element,
+            .skill-item {
+                opacity: 1 !important;
+                transform: none !important;
             }
         }
     </style>
@@ -2408,75 +2414,31 @@
 
         // Initialize animations with Intersection Observer
         function initAnimations() {
-            // Animate skills items with staggered delay and bounce effect
-            const skillItems = document.querySelectorAll('.skill-item');
-            skillItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0) scale(1)';
-                    item.style.transition = 'opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                    
-                    // Add hover effect
-                    item.addEventListener('mouseenter', () => {
-                        item.style.transform = 'translateY(-5px) scale(1.02)';
+            const animatedElements = document.querySelectorAll(
+                '.section-hidden, .fade-in-element, .skill-item'
+            );
+            const revealElement = (element) => {
+                element.classList.add('section-visible', 'visible');
+            };
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+                !('IntersectionObserver' in window)) {
+                animatedElements.forEach(revealElement);
+            } else {
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            revealElement(entry.target);
+                            observer.unobserve(entry.target);
+                        }
                     });
-                    
-                    item.addEventListener('mouseleave', () => {
-                        item.style.transform = 'translateY(0) scale(1)';
-                    });
-                }, index * 200);
-            });
-            
-            // Enhanced Intersection Observer for section animations with parallax
-            const sections = document.querySelectorAll('.section-hidden');
-            
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('section-visible');
-                        
-                        // Add subtle parallax to child elements
-                        const children = entry.target.querySelectorAll('.fade-in-element');
-                        children.forEach((child, index) => {
-                            setTimeout(() => {
-                                child.classList.add('visible');
-                                
-                                // Add subtle translate effect based on position
-                                const delay = index * 100;
-                                setTimeout(() => {
-                                    child.style.transform = 'translateY(0)';
-                                }, delay);
-                            }, index * 150);
-                        });
-                    }
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px'
                 });
-            }, {
-                threshold: 0.05,
-                rootMargin: '0px 0px -100px 0px'
-            });
-            
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
-            
-            // Enhanced fade observer
-            const fadeElements = document.querySelectorAll('.fade-in-element');
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, 100);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-            
-            fadeElements.forEach(element => {
-                fadeObserver.observe(element);
-            });
+
+                animatedElements.forEach(element => revealObserver.observe(element));
+            }
             
             // Enhanced hover effects for project cards
             const projectCards = document.querySelectorAll('.hover-lift');
